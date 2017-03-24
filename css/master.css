@@ -1,0 +1,702 @@
+/*MASTER.CSS*/
+/*==LOADING RESOURCES=======================*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import "/css/gotham_ssm_a.css";
+@import "/css/instagram.css";
+@import "/css/images.css";
+@font-face {
+  font-family: 'Century725BT-Italic';
+  src: url(/fonts/ufonts.com_century725bt-italic-1-opentype.otf);
+}
+/*==PAGE-WIDE PREADJUSTMENTS===============*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+/*==FONT & TEXT============================*/
+body {
+  font-size: 1em;
+  font-family: Gotham SSm A, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  color: rgb(100, 100, 100);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+body {
+  font-size: 62.5%;
+}
+div.wrapper1 div.logo h1 {
+  font-size: 6em;
+  font-weight: 300;
+  color: rgb(62, 62, 62);
+}
+div.wrapper1 div.logo h1::first-letter {
+  color: rgb(153, 51, 40);
+}
+div.wrapper1 div.telephone h2 {
+  font-size: 2.5em;
+}
+div.wrapper1 div.navigation1 li a {
+  font-family: "Century725BT-Italic",serif;
+  font-size: 1.5em;
+  font-style: italic;
+}
+div.wrapper1 div.navigation2 li a{
+  font-size: 2em;
+}
+div.wrapper1 div.navigation2 li + li::before {
+  font-size: 2em;
+}
+div.wrapper2 div.tagline h1 {
+  font-size: 3em;
+  line-height: 1.6em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  text-align: center;
+}
+div.wrapper3 div.wrapper h3 {
+  font-size: 2em;
+  line-height: 2em;
+}
+div.wrapper4 h3 {
+  font-size: 2em;
+}
+div.wrapper4 div.portfolio h4 {
+  font-size: 2em;
+  color: black;
+}
+div.wrapper4 div.portfolio p {
+  font-size: 1.5em;
+  font-style: italic;
+  font-family: "Century725BT-Italic",serif;
+}
+div.wrapper4 a.link_button {
+  font-size: 2.5em;
+  text-transform: capitalize;
+}
+div.wrapper5 {
+  color: white;
+}
+div.wrapper5 h2 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+  letter-spacing: 0.1em;
+}
+div.wrapper5 div.year {
+  font-family: 'Droid Serif', serif;
+  text-transform: uppercase;
+  font-size: 10em;
+  letter-spacing: 0em;
+}
+div.wrapper5 p {
+  font-family: "Century725BT-Italic",serif;
+  font-size: 2em;
+  line-height: 1.5em;
+  font-weight: 100;
+  font-style: italic;
+}
+div.wrapper6 {
+  text-transform: uppercase;
+}
+div.wrapper6 div.label {
+  font-size: 1.5em;
+}
+div.wrapper7 h2 {
+  font-size: 3em;
+  color: white;
+}
+div.wrapper8 div.gallery h5 a {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  color: white;
+  line-height: 3em;
+}
+div.wrapper8 ul li {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+div.wrapper8 div.sitemap p {
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+div.wrapper8 div.location {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: white;
+}
+div.wrapper8 div.footer {
+  font-family: serif;
+  font-style: italic;
+  font-size: 1.3em;
+  color: rgb(205, 205, 205);
+}
+/*==GRAPHICS: BACKGROUNDS, IMAGES=========*/
+/*--All devices--------------------------*/
+body {
+  background: white;
+}
+div.wrapper1 {
+  background: white;
+  }
+/*div.wrapper2 {
+  background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+  background-attachment: local;
+}*/
+div.wrapper2 div.bilboard {
+  background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-size: cover;
+}
+div.service div.circle.print {
+  background-color: rgb(115, 173, 189);
+}
+div.service div.circle.design{
+  background: rgb(249, 181, 46);
+}
+div.service div.circle.develop{
+  background: rgb(215, 214, 212);
+}
+/*--<800x600; Cinema)--------------------*/
+
+/*--<480x320; 800x600)-------------------*/
+
+/*--(Smart-Watch; 480x320)---------------*/
+
+/*--Touch-Screen-------------------------*/
+
+/*==POSITIONING & SIZING=================*/
+/*--All devices--------------------------*/
+div.wrapper1 {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 0px 10px 1px rgba(69, 69, 69, 0.1);
+}
+div.wrapper1 li {
+  display: inline-block;
+}
+div.wrapper1 div.header.wrapper {
+  position: relative;
+  min-width: 600px;
+  width: 80%;
+  max-width: 1100px;
+  margin: auto;
+  height: 140px;
+}
+div.wrapper1 div.logo {
+  position: absolute;
+  bottom: 30px;
+  left: 0%;
+}
+div.wrapper1 div.telephone {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+div.wrapper1 div.navigation1 {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+}
+div.wrapper1 div.navigation1 li + li::before {
+  content:'// ';
+}
+div.wrapper1 div.navigation2 {
+  position: absolute;
+  bottom: 15px;
+  right: 0%;
+}
+div.wrapper1 div.navigation1 a:hover{
+  border-bottom: 1px solid;
+}
+div.wrapper1 div.navigation2 a:hover{
+  border-bottom: 1px solid;
+}
+div.wrapper1 div.navigation2 li + li::before {
+  content: attr(data-bullet);
+  padding: 15px;
+}
+/*=======================*/
+div.spacer1 {
+  /*position: relative;*/
+  /*top: -100px;*/
+  height: 140px;
+}
+/*=======================*/
+div.shadow {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  box-shadow: 0px 0px 10px 1px rgba(69, 69, 69, 0.89);
+}
+/*=======================*/
+div.wrapper2 {
+  position: relative;
+  z-index: -2;
+  height: 540px;
+}
+div.wrapper2 div.bilboard {
+  position: absolute;
+  width: 100%;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.wrapper2 div.tagline {
+  width: 600px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  text-align: center;
+  /*margin: auto;*/
+}
+div.spacer2{
+  height: 540px;
+}
+/*=======================*/
+div.wrapper3 {
+  background: white;
+  padding-top: 60px;
+}
+div.wrapper3 div.wrapper>h3 {
+  padding-bottom: 100px;
+}
+div.wrapper3 div.wrapper {
+  min-width: 600px;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+div.wrapper3 div.services {
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+div.wrapper3 div.service {
+  min-width: 150px;
+  width: 33%;
+  max-width: 280px;
+  /*margin: 0px 20px;*/
+  padding: 0px 10px;
+  flex: 1 1 auto;
+}
+div.wrapper3 div.service div {
+  width: 100%;
+}
+div.wrapper3 div.service div.circle {
+  margin: auto;
+  width: 85%;
+  border-radius: 50%;
+  flex: 1 1 auto;
+}
+/*If circles are displayed in a column*/
+/*The delay should be 0*/
+div.wrapper3 div.service.pulse div.circle.print {
+  animation: circle_pulse 2s;
+  animation-delay: 0s;
+  animation-play-state: running;
+}
+div.wrapper3 div.service.pulse div.circle.design {
+  animation: circle_pulse 2s;
+  animation-delay: 0.5s;
+}
+div.wrapper3 div.service.pulse div.circle.develop {
+  animation: circle_pulse 2s;
+  animation-delay: 1s;
+}
+div.wrapper3 div.service div.circle a{
+  display: block;
+  width: 100%;
+  padding: 50% 0%;
+  border-radius: 50%;
+  color: white;
+  line-height: 0em;
+  transition: box-shadow 1s, opacity 1s;
+  background-position: center;
+  background-size: cover;
+}
+div.wrapper3 div.service a:hover {
+  box-shadow: 0px 0px 0px 300px rgba(255,255,255, 0.55) inset;
+}
+@keyframes circle_pulse {
+  0%{transform: scale(1.0,1.0);}
+  50%{transform: scale(1.05,1.05);}
+  100%{transform: scale(1.0,1.0);}
+}
+div.wrapper3 div.service h3{
+  margin: 20px 0px;
+  font-size: 2.5em;
+}
+div.wrapper3 div.service p {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: rgb(168, 164, 164);
+}
+div.wrapper3 div.service.print.pulse p {
+  transition: opacity 1s linear 0.5s;
+}
+div.wrapper3 div.service.design.pulse p {
+  transition: opacity 1s linear 1s;
+}
+div.wrapper3 div.service.develop.pulse p {
+  transition: opacity 1s linear 1.5s;
+}
+/*=======================*/
+div.wrapper4 {
+  background: white;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+div.wrapper4 h3 {
+  text-align: center;
+}
+div.wrapper4 div.portfolio {
+  padding: 50px 0px;
+  margin: auto;
+  min-width: 600px;
+  width: 80%;
+  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.wrapper4 div.case {
+  /*make it display in 2x4 table or 4x2*/
+  box-sizing: border-box;
+  padding: 7px;
+  width: 25%;
+  max-width: 400px;
+}
+div.wrapper4 a.case_link {
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 0px;
+  top: 0px;
+}
+div.wrapper4 div.poster {
+  width: 100%;
+  line-height: 0px;
+  position: absolute;
+  top: 0px;
+  transition: top 0.2s;
+}
+div.wrapper4 div.poster img{
+  width: 100%;
+}
+div.wrapper4 div.tagline {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0%;
+  z-index: -1;
+  padding-top: 22%;
+  padding-bottom: 0%;
+  background: white;
+  line-height: 3em;
+  height: 0px;
+  border: 1px solid rgba(60, 60, 60, 0.16);
+  border-top: none;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  transition: padding-bottom 0.20s;
+}
+div.wrapper4 a.case_link div.tagline *{
+  width: 100%;
+}
+div.wrapper4 a.case_link div.tagline hr{
+  width: 40%;
+  border:none;
+  border-top: 1px solid rgba(60, 60, 60, 0.4);
+}
+div.wrapper4 a.case_link:hover div.poster {
+  top: -101%;
+}
+div.wrapper4 a.case_link:hover div.tagline{
+  padding-bottom: 22%;
+  z-index: 0;
+}
+div.wrapper4 div.wrapper.link_button {
+  margin: auto;
+  text-align: center;
+}
+div.wrapper4 a.link_button {
+  padding: 10px;
+  border: 1px solid rgba(56, 56, 56, 0.74);
+  transition: all 0.5s;
+}
+div.wrapper4 a.link_button:hover {
+  background: rgba(143, 143, 143, 0.15);
+}
+/*=======================*/
+div.wrapper5 {
+  background: rgba(60, 60, 60, 1);
+  padding: 80px 0px;
+}
+div.wrapper5 div.wrapper {
+  margin: auto;
+  text-align: center;
+  min-width: 600px;
+  width: 80%;
+  max-width: 1100px;
+}
+div.wrapper5 div.year {
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+div.wrapper5 div.digit {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: 0px 10px;
+  word-break: break-all;
+  /*MOVE TO RIGHT FILE ZONE*/
+  letter-spacing: 0em;
+  line-height: 1.0em;
+}
+div.wrapper5 div.digit span {
+  position: relative;
+  display: block;
+  opacity: 0;
+}
+div.wrapper5 div.numbers {
+  position: absolute;
+  transition: top 1s;
+}
+div.wrapper5 div.year div.digit:nth-of-type(1) div.numbers {
+  top: -2em;
+}
+div.wrapper5 div.year div.digit:nth-of-type(2) div.numbers {
+  top: 0em;
+}
+div.wrapper5 div.year div.digit:nth-of-type(3) div.numbers {
+  top: -1em;
+}
+div.wrapper5 div.year div.digit:nth-of-type(4) div.numbers {
+  top: -7em;
+}
+div.wrapper5 div.year.founded div.digit:nth-of-type(1) div.numbers {
+  top: -1em;
+}
+div.wrapper5 div.year.founded div.digit:nth-of-type(2) div.numbers {
+  top: -8em;
+}
+div.wrapper5 div.year.founded div.digit:nth-of-type(3) div.numbers {
+  top: -7em;
+}
+div.wrapper5 div.year.founded div.digit:nth-of-type(4) div.numbers {
+  top: -3em;
+}
+div.wrapper5 p {
+  margin-bottom: 10px;
+}
+/*=======================*/
+div.wrapper6 {
+  background: white;
+}
+div.wrapper6.foreground {
+  min-width: 600px;
+  width: 80%;
+  max-width: 1100px;
+  padding: 80px 0px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align:center;
+}
+div.wrapper6 div.chart.wrapper {
+  width: 30%;
+  padding-bottom: 40px;
+}
+div.wrapper6 div.chart.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.wrapper6 canvas {
+  transition: opacity 0.5s;
+}
+div.wrapper6 div {
+  transition: opacity 0.7s;
+}
+div.wrapper6 .hidden {
+  opacity: 0;
+}
+div.wrapper6 div.label {
+  padding: 10px;
+}
+/*======================*/
+div.wrapper7 {
+  background: rgba(43, 42, 42, 1);
+}
+div.wrapper7 div.wrapper {
+  padding: 30px 0px;
+  margin: auto;
+  min-width: 600px;
+  width: 80%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.wrapper7 div.wrapper a:hover {
+  color: rgb(200, 200, 200);
+}
+div.wrapper7 div.social_media a {
+  display: inline-block;
+  margin: 10px;
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+}
+/*=======================*/
+div.wrapper8 {
+  background: rgba(60, 60, 60, 1);
+}
+div.wrapper8>div.wrapper{
+  min-width: 600px;
+  width: 80%;
+  max-width: 1100px;
+  padding-top: 50px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*justify-content: center;*/
+}
+div.wrapper8 div.gallery {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid rgb(45, 45, 45);
+  padding: 15px;
+  margin-bottom: 50px;
+  flex: 1 1 auto;
+}
+div.wrapper8 div.gallery div.photos {
+  display: flex;
+  flex-wrap: nowrap;
+}
+div.wrapper8 div.photo_wrapper{
+  background-color: black;
+  flex: 1 1 auto;
+  margin: 1px;
+  overflow: hidden;
+}
+div.wrapper8 div.photo_wrapper a {
+  display: block;
+  background-size: cover;
+  line-height: 0px;
+  padding-bottom: 100%;
+  transition: opacity 0.2s, transform 0.2s;
+}
+div.wrapper8 div.photo_wrapper a:hover {
+  opacity: 0.5;
+  transform: scale(1.05,1.05);
+}
+div.wrapper8 div.sitemap {
+  max-width: 800px;
+  width: 60%;
+  min-width: 550px;
+  display:flex;
+  flex-grow: 2;
+  padding-bottom: 50px;
+}
+div.wrapper8 div.sitemap div.wrapper {
+  padding: 0px;
+  width: 25%;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  font-size: 1em;
+  color: white;
+}
+div.wrapper8 ul li {
+  list-style: none;
+}
+div.wrapper8 div.location {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  text-align: center;
+  flex: 1 1 auto;
+  width: 200px;
+  max-width: 100%;
+  background: rgb(43, 43, 43);
+  padding: 10px;
+  align-self: flex-start;
+  margin-bottom: 50px;
+}
+div.wrapper8 div.location div {
+  background-position: center;
+  background-origin: content-box;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+}
+div.wrapper8 div.footer {
+  border-top: 2px solid rgb(43, 43, 43);
+  min-width: 600px;
+  width: 80%;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 0px;
+}
+div.wrapper8 div.footer li{
+  display: inline;
+}
+div.wrapper8 div.footer li a:hover{
+  text-decoration: underline;
+}
+div.wrapper8 div.footer li + li::before{
+  content: attr(data-bullet);
+  padding: 10px;
+}
+/*BREAKING POINTS*/
+/*===CHARTS==================================*/
+/*850px -> 53em*/
+@media (max-width: 53em) {
+  div.wrapper6 div.chart.wrapper {
+
+  }
+}
+/*--<800; Cinema)--------------------*/
+/*800 / 16 = 50*/
+@media (min-width:80em)  {
+  @import "/css/media_desktop.css";
+}
+/*--<480x320; 800)-------------------*/
+
+/*--(Smart-Watch; 480x320)---------------*/
+
+/*--Touch-Screen-------------------------*/
+
+/*==FORMS=====================================*/
+
+/*==FX: SHADOWS, ANIMATIONS, TRANSITIONS======*/

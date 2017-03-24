@@ -1,0 +1,35 @@
+One scroll listener with global output
+
+Clear javascript, maybe save as separate files
+Comment javascript
+Clean your CSS code
+Write the differences between your work
+  and the original code.
+  What is the reason behind?
+Maybe grant each script-targeted element, an id and select it with it. It is silly to use class if I only need one element and not an array of them.
+
+check-out .json notation and make simple prototype file for
+statistics storage.
+make a function to load data from .json
+write down some conclusions
+  how canvas methods work
+  this trick: a == b ? c : d
+  setTimeout
+  save and restore
+
+
+define which variables should be local to function and which should be defined outside; just control it.
+
+PLAN
+Add page to GitHub
+Try to automate deployment in
+whichever way
+Backup page from time to time when
+working with git to not f####up
+Add couple more pages, as much as you
+will manage
+Test if this stays in one piece
+Edit CV to final form
+Look for open positions in neighbourhood and start spamming CV.
+
+Go back to the website and add few more pages and polish it.
