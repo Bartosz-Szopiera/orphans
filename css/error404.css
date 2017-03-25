@@ -1,0 +1,25 @@
+div.wrapper2 {
+  height: auto;
+}
+div.wrapper2 div.error404 {
+  margin: auto;
+  width: 80%;
+  padding-top:12.5%;
+  padding-bottom: 7.5%;
+  text-align: justify;
+}
+div.wrapper2 div.error404 * {
+  padding: 10px 0px;
+}
+div.wrapper2 h3 {
+  color: black;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+div.wrapper2 p {
+  font-size: 1.5em;
+}
+#shadow {
+  box-shadow: none;
+}
