@@ -10,9 +10,31 @@
 		</style>
 		<script type="text/javascript">
 			document.documentElement.className = 'no_fouc';
+			function hideDisclaimer() {
+				var el = document.getElementById('disclaimer');
+				el.classList.toggle('hidden');
+			}
 		</script>
 	</head>
 	<body onscroll="headerTransform(), animationRun(), animationRun2()">
+		<div id="disclaimer" class="disclaimer">
+			<div id="disclaimerLabel">
+				<div class="wrapper" onclick="hideDisclaimer()">
+					<div class="rounding">
+						<span></span>
+					</div><!--
+					--><h3>Disclaimer</h3><!--
+				--><div class="rounding">
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div id="disclaimerText" class="disclaimerText">
+				<h1>This website is a reproduction of another for purely personal, learning purposes. It is neither meant nor used for any business pursuit.<br> To visit the original website please follow:<br> <a href="https://www.orphans.co.uk" target="_blank">www.orphans.co.uk</a>.<br> All artistic assets are the property of the owner of www.orphans.co.uk.</h1>
+				<h2 onclick="hideDisclaimer()">Proceed to the website</h2>
+			</div>
+		</div>
+		<div id="overlay" class="overlay"></div>
 		<div class="wrapper1">
 			<div class="header wrapper">
 				<div class="logo" >
@@ -389,6 +411,10 @@
 		chartLabel();
 		chartListener();
 		window.addEventListener('scroll', chartListener);
+		function hideAlert() {
+			var el = document.getElementById('copyrightAlert');
+			el.classList.add('hidden');
+		}
 	},100)
 	</script>
 </html>
