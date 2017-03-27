@@ -755,7 +755,6 @@ div.disclaimerText h2:hover {
   padding: 30px 20px;
   line-height: 0px;
   max-width: 100%;
-  /*width: auto;*/
   flex: 1 1 auto;
   background: rgba(173, 48, 16, 0.9);
   border-top-left-radius: 20px;

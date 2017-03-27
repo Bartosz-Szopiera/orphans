@@ -9,14 +9,18 @@
 			.no_fouc {visibility:hidden;}
 		</style>
 		<script type="text/javascript">
+			// Prevent flash of unstyled content
 			document.documentElement.className = 'no_fouc';
+			// Show disclaimer on the first page load during
+			// the current browsing session.
+
 			function hideDisclaimer() {
 				var el = document.getElementById('disclaimer');
 				el.classList.toggle('hidden');
 			}
 		</script>
 	</head>
-	<body onscroll="headerTransform(), animationRun(), animationRun2()">
+	<body>
 		<div id="disclaimer" class="disclaimer">
 			<div id="disclaimerLabel" onclick="hideDisclaimer()">
 					<div class="rounding">
@@ -404,15 +408,19 @@
 	<script src="js/effects.js" type="text/javascript" charset="utf-8">
 	</script>
 	<script charset="utf-8">
-	setTimeout(function(){
-		document.documentElement.classList.remove('no_fouc');
+		window.addEventListener('scroll', globalHandler);
+		// Transform header if needed
+		headerTransformation();
+		// Animate service icons if needed
+		serviceIconAnimation();
+		// Build chart labels
 		chartLabel();
-		chartListener();
-		window.addEventListener('scroll', chartListener);
-		function hideAlert() {
-			var el = document.getElementById('copyrightAlert');
-			el.classList.add('hidden');
-		}
-	},100)
+		// Animate charts if needed
+		chartDrawingControl();
+
+		// Take time to load and show page
+		setTimeout(function(){
+			document.documentElement.classList.remove('no_fouc');
+		},100)
 	</script>
 </html>

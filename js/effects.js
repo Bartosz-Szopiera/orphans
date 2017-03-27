@@ -55,7 +55,7 @@ function sumAr(a,b){
   return sum;
 }
 // =======TOP MENU TRANSITIONS=================
-function headerTransform(){
+function headerTransformation(){
   if (scrollState()<90) {
     // wrapper1.style.position = 'absolute';
     // wrapper1.style.top = 'unset';
@@ -82,7 +82,7 @@ function headerTransform(){
 }
 
 //=======BIG SERVICE ICONS=====================
-function animationRun() {
+function serviceIconAnimation() {
   // Goals:
   // 1) no animation or transition when the page
   // loads with cirles in active view and above
@@ -129,7 +129,7 @@ function animationRun() {
   return down;
 }
 //======YEAR-SLOT-MACHINE======================
-function animationRun2() {
+function yearAnimation() {
   var screen_height = document.documentElement.clientHeight;
   var start_point = 0.70*screen_height;
   var position = year.getBoundingClientRect().top;
@@ -273,7 +273,7 @@ function chartLabel(){
 }
 //=======ONSCROLL HANDLER=====================
 // Direct labels, and chart animations behaviour
-function chartListener(){
+function chartDrawingControl(){
   var delay = -600;
   var sum;
   var ctx;
@@ -335,7 +335,14 @@ function chartListener(){
 }
 // ====RUN ON STARTUP==========================
 
-headerTransform();
-animationRun();
+// headerTransformation();
+// serviceIconAnimation();
 // chartLabel();
 // chartListener();
+
+function globalHandler(){
+  headerTransformation();
+  serviceIconAnimation();
+  yearAnimation();
+  chartDrawingControl()
+}
