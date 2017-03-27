@@ -56,20 +56,24 @@ function sumAr(a,b){
 }
 // =======TOP MENU TRANSITIONS=================
 function headerTransformation(){
-  if (scrollState()<90) {
-    // wrapper1.style.position = 'absolute';
-    // wrapper1.style.top = 'unset';
+  // Pseudo scroll is used as a workaround to not
+  // use ScrollState() as Firefox semingly blocks
+  // this function when it attempted to use for
+  // handling scroll event
+  var wra2TopDist = wrapper2.getBoundingClientRect().top;
+  var pseudoScrollState = -((wra2TopDist>0 ? wra2TopDist : 0) - 140);
+
+  if (pseudoScrollState<90) {
     wrapper1.style.position = 'fixed';
-    wrapper1.style.top = -scrollState() + 'px';
+    wrapper1.style.top = -pseudoScrollState + 'px';
     shadow.style.position = 'relative';
     shadow.style.top = '0px';
-    logo.style.fontSize = (1-scrollState()*0.55/90) +'em';
-    logo.style.bottom = (30-scrollState()*20/90)+'px';
+    logo.style.fontSize = (1- pseudoScrollState *0.55/90) +'em';
+    logo.style.bottom = (30- pseudoScrollState *20/90)+'px';
     bilboard.style.position = 'absolute';
     bilboard.style.top = '0px';
   }
-  // if (scrollState()>=90 && wrapper1.style.position == 'fixed') {
-  if (scrollState()>=90) {
+  if (pseudoScrollState>=90) {
     wrapper1.style.position = 'fixed';
     wrapper1.style.top = "-90px";
     shadow.style.position = 'fixed';
@@ -333,12 +337,6 @@ function chartDrawingControl(){
     }
   }
 }
-// ====RUN ON STARTUP==========================
-
-// headerTransformation();
-// serviceIconAnimation();
-// chartLabel();
-// chartListener();
 
 function globalHandler(){
   headerTransformation();

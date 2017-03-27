@@ -683,26 +683,17 @@ div.wrapper8 div.footer li + li::before{
   z-index: 9001;
   position: fixed;
   width: 100%;
-  top: 0px;
-  transition: top 0.8s;
+  bottom: 0px;
+  transition: bottom 0.8s;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 #disclaimer.hidden {
-  top: 100vh;
+  bottom: -100vh;
   transform: translate(0,10px);
-}
-#overlay {
-  position: fixed;
-  top: 70px;
-  height: 150vh;
-  width: 100%;
-  z-index: 9000;
-  transition: top 0.8s;
-}
-#disclaimer.hidden + #overlay {
-  z-index: 9002;
-  top: 100vh;
 }
 #disclaimer.hidden #disclaimerLabel:hover {
   transform: translate(0,-10px);
@@ -711,7 +702,7 @@ div.wrapper8 div.footer li + li::before{
   transform: translate(0,-10px);
 }
 div.disclaimerText {
-  width: 100%;
+  width: 100vw;
   text-align: center;
   height: 100vh;
   background: rgba(173, 48, 16, 0.9);
@@ -733,29 +724,19 @@ div.disclaimerText h1 a {
   text-shadow: 1px 1px 5px rgb(223, 216, 213);
   font-weight: 900;
 }
-div.disclaimerText h2 {
-  position: absolute;
-  bottom: 0px;
-}
 div.disclaimerText h2:hover {
   cursor: pointer;
 }
 #disclaimerLabel {
   z-index: 9001;
-  position: absolute;
-  top: -60px;
-  width: 20%;
   text-align: center;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
 }
 #disclaimerLabel h3 {
   padding: 30px 20px;
   line-height: 0px;
-  max-width: 100%;
-  flex: 1 1 auto;
+  width: 20vw;
+  min-width: 200px;
   background: rgba(173, 48, 16, 0.9);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -783,9 +764,6 @@ div.disclaimerText h2:hover {
   border-bottom-left-radius: 100%;
   box-shadow: 0px 0px 0px 15px rgba(173, 48, 16, 0.9);
 }
-/*#disclaimerLabel div.rounding~div.rounding span {
-  transform: rotate(90deg);
-}*/
 #disclaimerLabel:hover {
   cursor: pointer;
 }
