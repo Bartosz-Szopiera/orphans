@@ -11,9 +11,7 @@
 		<script type="text/javascript">
 			// Prevent flash of unstyled content
 			document.documentElement.className = 'no_fouc';
-			// Show disclaimer on the first page load during
-			// the current browsing session.
-
+			// Toggle between visible and hidden disclaimer
 			function hideDisclaimer() {
 				var el = document.getElementById('disclaimer');
 				el.classList.toggle('hidden');
@@ -21,7 +19,7 @@
 		</script>
 	</head>
 	<body>
-		<div id="disclaimer" class="disclaimer">
+		<div id="disclaimer" class="disclaimer hidden">
 			<div id="disclaimerLabel" onclick="hideDisclaimer()">
 					<div class="rounding">
 						<span></span>
@@ -408,6 +406,13 @@
 	<script src="js/effects.js" type="text/javascript" charset="utf-8">
 	</script>
 	<script charset="utf-8">
+		// Show disclaimer on the first page load during
+		// the current browsing session.
+		if (document.cookie == "") {
+			document.cookie = "session=in_progress";
+			hideDisclaimer();
+		}
+
 		window.addEventListener('scroll', globalHandler);
 		// Transform header if needed
 		headerTransformation();
