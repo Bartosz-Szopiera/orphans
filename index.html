@@ -4,23 +4,17 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="/css/master.css">
 		<title>orphans.co.uk</title>
-		<script src="js/chart.js" type="text/javascript"></script>
 		<style>
 			.no_fouc {visibility:hidden;}
 		</style>
 		<script type="text/javascript">
 			// Prevent flash of unstyled content
 			document.documentElement.className = 'no_fouc';
-			// Toggle between visible and hidden disclaimer
-			function hideDisclaimer() {
-				var el = document.getElementById('disclaimer');
-				el.classList.toggle('hidden');
-			}
 		</script>
 	</head>
 	<body>
 		<div id="disclaimer" class="disclaimer hidden">
-			<div id="disclaimerLabel" onclick="hideDisclaimer()">
+			<div id="disclaimerLabel" onclick="disclaimer()">
 					<div class="rounding">
 						<span></span>
 					</div><!--
@@ -31,7 +25,23 @@
 			</div>
 			<div id="disclaimerText" class="disclaimerText">
 				<h1>This website is a reproduction of another for purely personal, learning purposes. It is neither meant nor used for any business pursuit.<br> To visit the original website please follow:<br> <a href="https://www.orphans.co.uk" target="_blank">www.orphans.co.uk</a>.<br> All artistic assets are the property of the owner of www.orphans.co.uk.</h1>
-				<h2 onclick="hideDisclaimer()">Proceed to the website</h2>
+				<h2 onclick="disclaimer()">Proceed to the website</h2>
+			</div>
+		</div>
+		<div id="cookieAlert" class="cookieAlert hidden">
+			<div class="background">
+			</div>
+			<div class="wrapper">
+				<h4>This website is using cookies.</h4>
+				<div class="">
+					<p class="allow" onclick="allowCookies()">Allow cookies</p>
+				</div>
+				<div class="">
+					<p class="disable" onclick="cookieAlert()">Disable</p>
+				</div>
+				<div class="">
+					<p><a href="../cookies.html">Read more</a></p>
+				</div>
 			</div>
 		</div>
 		<div class="wrapper1">
@@ -402,14 +412,53 @@
 			</div>
 		</div>
 	</body>
+	<script src="js/chart.js" type="text/javascript"></script>
 	<script src="js/effects.js" type="text/javascript" charset="utf-8">
 	</script>
 	<script charset="utf-8">
-		// Show disclaimer on the first page load during
-		// the current browsing session.
-		if (document.cookie == "") {
-			document.cookie = "session=in_progress";
-			hideDisclaimer();
+
+		// Hide alert
+		function cookieAlert() {
+			var el = document.getElementById('cookieAlert');
+			el.classList.add('hidden');
+		}
+
+		// Save user choice to allow cookies
+		function allowCookies() {
+			var today = Date();
+			var miliseconds = Date.parse(today) + 1000*60*60*24*356;
+			var expirationDate = new Date(miliseconds).toUTCString();
+			console.log(expirationDate);
+			document.cookie = "cookies_allowed=;expires=" + expirationDate;
+			document.cookie = "new_session=";
+			cookieAlert();
+		}
+
+		// Toggle between visible and hidden disclaimer
+		function disclaimer() {
+			var el = document.getElementById('disclaimer');
+			el.classList.toggle('hidden');
+			// Add cookie after user exits the disclaimer to not
+			// show it again in the current session.
+			if (document.cookie.search('new_session') == -1 &&
+				document.cookie.search('cookies_allowed') != -1) {
+				document.cookie = 'new_session';
+			}
+		}
+
+		// ===============================
+
+		// Show cookies alert on page startup if cookies were
+		// not allowed.
+		if (document.cookie.search('cookies_allowed') == -1) {
+			// Show cookies alert
+			var el = document.getElementById('cookieAlert');
+			el.classList.remove('hidden');
+		}
+		if (document.cookie.search('new_session') == -1) {
+			// Show/hide other elements dependant on cookies:
+			// Disclaimer
+			disclaimer();
 		}
 
 		window.addEventListener('scroll', globalHandler);

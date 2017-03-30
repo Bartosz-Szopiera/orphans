@@ -701,32 +701,6 @@ div.wrapper8 div.footer li + li::before{
 #disclaimer.hidden #disclaimerLabel:hover + #disclaimerText {
   transform: translate(0,-10px);
 }
-div.disclaimerText {
-  width: 100vw;
-  text-align: center;
-  height: 100vh;
-  background: rgba(173, 48, 16, 0.9);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-div.disclaimerText h1, div.disclaimerText h2{
-  flex-grow: 0;
-  width: 80%;
-  font-size: 2.5em;
-  letter-spacing: 2px;
-  padding-bottom: 60px;
-}
-div.disclaimerText h1 a {
-  color: rgb(140, 9, 40);
-  text-shadow: 1px 1px 5px rgb(223, 216, 213);
-  font-weight: 900;
-}
-div.disclaimerText h2:hover {
-  cursor: pointer;
-}
 #disclaimerLabel {
   z-index: 9001;
   text-align: center;
@@ -769,6 +743,82 @@ div.disclaimerText h2:hover {
 }
 #disclaimerLabel:hover h3 {
   font-size:2.2em;
+}
+div.disclaimerText {
+  width: 100vw;
+  text-align: center;
+  height: 100vh;
+  background: rgba(173, 48, 16, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.disclaimerText h1, div.disclaimerText h2{
+  flex-grow: 0;
+  width: 80%;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  padding-bottom: 60px;
+}
+div.disclaimerText h1 a {
+  color: rgb(140, 9, 40);
+  text-shadow: 1px 1px 5px rgb(223, 216, 213);
+  font-weight: 900;
+}
+div.disclaimerText h2:hover {
+  cursor: pointer;
+}
+/*===========================*/
+#cookieAlert {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 200px;
+  height: 200px;
+  z-index: 9002;
+}
+#cookieAlert div.wrapper{
+  position: relative;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  background: url(../icons/cookie.svg);
+  background-size: cover;
+}
+#cookieAlert div.background {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 0, 0, 1);
+  background-clip: content-box;
+}
+#cookieAlert div.wrapper h4{
+  font-size: 2em;
+  text-align: center;
+  font-weight: 600;
+  color: rgb(230, 230, 230);
+}
+#cookieAlert div.wrapper p {
+  font-size: 1.5em;
+  font-weight: 500;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  padding-top: 15px;
+  padding-left: 20px;
+  color: rgb(230, 230, 230);
+}
+#cookieAlert p:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px 1px rgb(203, 171, 147);
+}
+#cookieAlert.hidden {
+  display: none;
 }
 
 /*BREAKING POINTS*/
