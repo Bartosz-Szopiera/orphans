@@ -1,3 +1,8 @@
 #Error 404 page
 
 ErrorDocument 404 /error404.html
+
+#fix for apache serving svg with correct
+#content type
+
+#AddType image/svg+xml .svg .svgz
