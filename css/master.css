@@ -531,9 +531,12 @@ div.wrapper6 div.chart.wrapper {
   padding-bottom: 40px;
 }
 div.wrapper6 div.chart.canvas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*Flex turned off to not bug with*/
+  /*position:absolute on Firefox*/
+  position: relative;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
 }
 div.wrapper6 canvas {
   transition: opacity 0.5s;

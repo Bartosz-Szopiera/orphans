@@ -241,8 +241,8 @@ function chartLabel(){
       label.classList.add('chartLabel_'+i);
       label.classList.add('hidden');
       label.style.position = 'absolute';
-      label.style.display = 'flex';
-      label.style.justifyContent = 'center';
+      // label.style.display = 'flex';
+      // label.style.justifyContent = 'center';
       chart[i].insertBefore(label, canvas[i]);
       // Adjust label radius to oavoid overlap
       radius = width * 0.5 + orbitShift[i][j]*labelHeight*2;
@@ -265,13 +265,18 @@ function chartLabel(){
         letter.style.transform = 'rotate(' + letterRot + 'deg)';
         letter.style.transformOrigin = 'center ' + radius + 'px';
         letter.style.top = -radius + 'px';
-        // Sum rotation
+        // Center letter (to avoid centering with flexbox
+        // which is bugged when used together with position:absolute)
+        letter.style.left = -letterWidth*0.5 + 'px';
       }
       // Whole angle covered by the label
       labelArc = letterRot;
       divRot = angleMid - 0.5*labelArc;
       label.style.transform = 'rotate(' + divRot + 'deg)';
       labelArc = 0;
+      // Center label to not use flexbox
+      label.style.top = chart[i].offsetHeight*0.5 + 'px';
+      label.style.left = chart[i].offsetWidth*0.5 + 'px';
     }
   }
 }
