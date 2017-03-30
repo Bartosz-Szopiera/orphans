@@ -2,9 +2,9 @@
 /*==LOADING RESOURCES=======================*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif');
-@import "/css/gotham_ssm_a.css";
-@import "/css/instagram.css";
-@import "/css/images.css";
+@import "gotham_ssm_a.css";
+@import "instagram.css";
+@import "images.css";
 @font-face {
   font-family: 'Century725BT-Italic';
   src: url(/fonts/ufonts.com_century725bt-italic-1-opentype.otf);
@@ -832,7 +832,7 @@ div.disclaimerText h2:hover {
 /*--<800; Cinema)--------------------*/
 /*800 / 16 = 50*/
 @media (min-width:80em)  {
-  @import "/css/media_desktop.css";
+  @import "media_desktop.css";
 }
 /*--<480x320; 800)-------------------*/
 
