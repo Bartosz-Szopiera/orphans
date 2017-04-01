@@ -260,7 +260,9 @@
 			<div class="wrapper6 foreground">
 				<div class="chart wrapper">
 					<div class="chart canvas">
-						<canvas class="ringChart" width="200" height="200"></canvas>
+						<div class="canvasWrapper">
+							<canvas class="ringChart" width="200" height="200"></canvas>
+						</div>
 					</div>
 					<div class="label">
 						<p>Our design</p>
@@ -268,7 +270,9 @@
 				</div>
 				<div class="chart wrapper">
 					<div class="chart canvas">
-						<canvas class="ringChart" width="200" height="200"></canvas>
+						<div class="canvasWrapper">
+							<canvas class="ringChart" width="200" height="200"></canvas>
+						</div>
 					</div>
 					<div class="label">
 						<p>Green printing</p>
@@ -276,7 +280,9 @@
 				</div>
 				<div class="chart wrapper">
 					<div class="chart canvas">
-						<canvas class="ringChart" width="200" height="200"></canvas>
+						<div class="canvasWrapper">
+							<canvas class="ringChart" width="200" height="200"></canvas>
+						</div>
 					</div>
 					<div class="label">
 						<p>Typical web project</p>
@@ -284,7 +290,9 @@
 				</div>
 				<div class="chart wrapper">
 					<div class="chart canvas">
-						<canvas class="ringChart" width="200" height="200"></canvas>
+						<div class="canvasWrapper">
+							<canvas class="ringChart" width="200" height="200"></canvas>
+						</div>
 					</div>
 					<div class="label">
 						<p>Our customers</p>
@@ -292,7 +300,9 @@
 				</div>
 				<div class="chart wrapper">
 					<div class="chart canvas">
-						<canvas class="ringChart" width="200" height="200"></canvas>
+						<div class="canvasWrapper">
+							<canvas class="ringChart" width="200" height="200"></canvas>
+						</div>
 					</div>
 					<div class="label">
 						<p>Our team</p>
@@ -300,7 +310,9 @@
 				</div>
 				<div class="chart wrapper">
 					<div class="chart canvas">
-						<canvas class="ringChart" width="200" height="200"></canvas>
+						<div class="canvasWrapper">
+							<canvas class="ringChart" width="200" height="200"></canvas>
+						</div>
 					</div>
 					<div class="label">
 						<p>How we get to work</p>
@@ -405,16 +417,15 @@
 			<div class="footer">
 				<ul>
 					<li>2017 &copy; Orphans Press Ltd</li>
-					<li data-bullet="&#8226;"><a>Company Information</a></li>
+					<li data-bullet="&#8226;"><a href="#">Company Information</a></li>
 					<li data-bullet="&#8226;"><a href="#">Job Opportunities</a></li>
 					<li data-bullet="&#8226;"><a href="#">Privacy &amp; Cookies</a></li>
 				</ul>
 			</div>
 		</div>
 	</body>
-	<script src="js/chart.js" type="text/javascript"></script>
-	<script src="js/effects.js" type="text/javascript" charset="utf-8">
-	</script>
+	<script src="js/chart.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/effects.js" type="text/javascript" charset="utf-8"></script>
 	<script charset="utf-8">
 
 		// Hide alert
@@ -470,10 +481,50 @@
 		chartLabel();
 		// Animate charts if needed
 		chartDrawingControl();
-
 		// Take time to load and show page
 		setTimeout(function(){
 			document.documentElement.classList.remove('no_fouc');
 		},100)
+
+		// IE11 scrolling
+		if(navigator.userAgent.match(/Trident\/7\./)) {
+			// mousewheel, wheelDeta, pageYOffset should not be used
+			// outside IE and some Safarmi version.
+        document.body.addEventListener('mousewheel', function () {
+            // remove default behavior
+            event.preventDefault();
+
+            //scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+		}
+
+		// Edge scrolling
+		if(navigator.userAgent.match(/Edge/)) {
+			// mousewheel, wheelDeta, pageYOffset should not be used
+			// outside IE and some Safarmi version.
+        document.body.addEventListener('mousewheel', function () {
+            // remove default behavior
+            event.preventDefault();
+
+            //scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+						var wheelDelta = wheelDelta*1.5;
+            var currentScrollPosition = window.pageYOffset;
+
+						// Scroll smoothing
+						for (var i=0; i<5; i++) {
+							var delay = 10*i;
+							setTimeout(function(currentScrollPosition, wheelDelta, i){
+								window.scrollTo(0, currentScrollPosition - (i+1)*wheelDelta/5);
+							},delay,currentScrollPosition, wheelDelta, i)
+						}
+
+            // window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+		}
+
 	</script>
 </html>

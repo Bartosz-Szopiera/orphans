@@ -14,6 +14,7 @@ var down = []
 wrapper1.style.position = getComputedStyle(wrapper1).position;
 var year = document.getElementsByClassName('year')[0];
 var done;
+var canvasWrapper = document.getElementsByClassName('canvasWrapper');
 var canvas = document.getElementsByClassName('ringChart');
 var ctx ;
 var chartDone = [] ;
@@ -240,10 +241,10 @@ function chartLabel(){
       var label = document.createElement('div');
       label.classList.add('chartLabel_'+i);
       label.classList.add('hidden');
-      label.style.position = 'absolute';
+      // label.style.position = 'absolute';
       // label.style.display = 'flex';
       // label.style.justifyContent = 'center';
-      chart[i].insertBefore(label, canvas[i]);
+      chart[i].insertBefore(label, canvasWrapper[i]);
       // Adjust label radius to oavoid overlap
       radius = width * 0.5 + orbitShift[i][j]*labelHeight*2;
       orbit = 2 * radius * Math.PI;
@@ -275,8 +276,8 @@ function chartLabel(){
       label.style.transform = 'rotate(' + divRot + 'deg)';
       labelArc = 0;
       // Center label to not use flexbox
-      label.style.top = chart[i].offsetHeight*0.5 + 'px';
-      label.style.left = chart[i].offsetWidth*0.5 + 'px';
+      // label.style.top = chart[i].offsetHeight*0.5 + 'px';
+      // label.style.left = chart[i].offsetWidth*0.5 + 'px';
     }
   }
 }
@@ -297,7 +298,7 @@ function chartDrawingControl(){
       var newCanvas = document.createElement('canvas');
       newCanvas.setAttribute('width', 200);
       newCanvas.setAttribute('height', 200);
-      chart[i].replaceChild(newCanvas, canvas[i]);
+      canvasWrapper[i].replaceChild(newCanvas, canvas[i]);
       newCanvas.classList.add('ringChart');
       ctx = canvas[i].getContext('2d');
       stat = data[i];
