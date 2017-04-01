@@ -7,7 +7,7 @@
 @import "images.css";
 @font-face {
   font-family: 'Century725BT-Italic';
-  src: url(/fonts/ufonts.com_century725bt-italic-1-opentype.otf);
+  src: url(../fonts/ufonts.com_century725bt-italic-1-opentype.otf);
 }
 /*==PAGE-WIDE PREADJUSTMENTS===============*/
 * {
