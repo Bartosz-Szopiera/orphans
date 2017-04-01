@@ -67,9 +67,10 @@ for (var j = 0; j < records; j ++){
 }
 
 // Initial path for the gap-line
-var path = new Path2D();
-path.moveTo(0, - r + chartWidth/2);
-path.lineTo(0, - r - chartWidth/2);
+// Not supported in IE11
+// var path = new Path2D();
+// path.moveTo(0, - r + chartWidth/2);
+// path.lineTo(0, - r - chartWidth/2);
 
 // Loop through frames
 for (var i = 0; i < frames; i ++){
@@ -113,11 +114,17 @@ function draw(){
           ctx.save();
           ctx.beginPath();
           ctx.rotate((dx[i]) * deg);
-          ctx.stroke(path);
+          // ctx.stroke(path);
+          ctx.moveTo(0, - r + chartWidth/2);
+          ctx.lineTo(0, - r - chartWidth/2);
+          ctx.stroke();
           ctx.restore();
         }
         ctx.beginPath();
-        ctx.stroke(path);
+        // ctx.stroke(path);
+        ctx.moveTo(0, - r + chartWidth/2);
+        ctx.lineTo(0, - r - chartWidth/2);
+        ctx.stroke();
         ctx.restore();
   },delay,a);
 }
