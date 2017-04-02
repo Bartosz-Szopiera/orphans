@@ -20,6 +20,7 @@ var canvas = document.getElementsByClassName('ringChart');
 var ctx ;
 var chartDone = [] ;
 var chart = document.getElementsByClassName('chart canvas');
+var em = 16;
 
 // ============================================
 function scrollState() {
@@ -65,13 +66,19 @@ function headerTransformation(){
 
   // Height of the header
   var headerHeight = pageHeader.offsetHeight;
-  console.log(headerHeight);
   // Ratio of height of small header to big header
   var x = 0.36;
   // Scroll breaking point
   var brPoint = (1-x)*headerHeight;
   // Default distance of logo to header bottom
-  var logoBottom = 25; //px
+  var logoBottom;
+  if (window.innerWidth < 53*em ){
+    logoBottom = 10; //px
+    console.log(logoBottom);
+  }
+  else {
+    logoBottom = 25; //px
+  }
 
   // Check scroll state live
   var wra2TopDist = wrapper2.getBoundingClientRect().top;
@@ -100,7 +107,6 @@ function headerTransformation(){
     shadow.style.top = x*headerHeight + 'px';
     logo.style.fontSize = Math.max(x, 0.5) +'em';
     logo.style.bottom = (logoBottom * x)+'px';
-
     bilboard.style.position = 'fixed';
     bilboard.style.top = x*headerHeight + 'px';
   }
