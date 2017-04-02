@@ -208,7 +208,7 @@ div.wrapper1 div.header.wrapper {
 }
 div.wrapper1 div.logo {
   position: absolute;
-  bottom: 30px;
+  bottom: 25px;
   left: 0%;
 }
 div.wrapper1 div.telephone {
@@ -241,8 +241,6 @@ div.wrapper1 div.navigation2 li + li::before {
 }
 /*=======================*/
 div.spacer1 {
-  /*position: relative;*/
-  /*top: -100px;*/
   height: 140px;
 }
 /*=======================*/
@@ -847,6 +845,27 @@ div.disclaimerText h2:hover {
 /*===CHARTS==================================*/
 /*850px -> 53em*/
 @media (max-width: 53em) {
+  div.wrapper1 div.logo h1 {
+    font-size: 4em;
+  }
+  div.wrapper1 div.navigation1 {
+    font-size: 0.85em;
+    top: 35px;
+  }
+  div.wrapper1 div.navigation2 {
+    font-size: 0.80em;
+    bottom: 10px;
+  }
+  div.wrapper1 div.telephone {
+    font-size: 0.8em;
+    top: 5px;
+  }
+  div.wrapper1 div.header.wrapper {
+    height: 90px;
+  }
+  div.spacer1 {
+    height: 90px;
+  }
   div.wrapper6 div.chart.wrapper {
   }
 }

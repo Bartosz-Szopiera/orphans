@@ -1,4 +1,5 @@
 var wrapper1 = document.getElementsByClassName('wrapper1')[0];
+var pageHeader = document.getElementsByClassName('header wrapper')[0];
 var logo = document.getElementsByClassName('logo')[0];
 var wrapper2 = document.getElementsByClassName('wrapper2')[0];
 var bilboard = document.getElementById('bilboard');
@@ -61,28 +62,47 @@ function headerTransformation(){
   // use ScrollState() as Firefox semingly blocks
   // this function when it attempted to use for
   // handling scroll event
-  var wra2TopDist = wrapper2.getBoundingClientRect().top;
-  var pseudoScrollState = -((wra2TopDist>0 ? wra2TopDist : 0) - 140);
 
-  if (pseudoScrollState<90) {
+  // Height of the header
+  var headerHeight = pageHeader.offsetHeight;
+  console.log(headerHeight);
+  // Ratio of height of small header to big header
+  var x = 0.36;
+  // Scroll breaking point
+  var brPoint = (1-x)*headerHeight;
+  // Default distance of logo to header bottom
+  var logoBottom = 25; //px
+
+  // Check scroll state live
+  var wra2TopDist = wrapper2.getBoundingClientRect().top;
+  // Get value from 0 to (1-x)*headerHeight
+  var pseudoScrollState = -((wra2TopDist>0 ? wra2TopDist : 0) - headerHeight);
+  // Shrinkage factor in relation to pseudoScrollState
+  var shrF = (headerHeight - pseudoScrollState)/headerHeight
+
+  if (pseudoScrollState<brPoint) {
     wrapper1.style.position = 'fixed';
     wrapper1.style.top = -pseudoScrollState + 'px';
     shadow.style.position = 'relative';
     shadow.style.top = '0px';
-    logo.style.fontSize = (1- pseudoScrollState *0.55/90) +'em';
-    logo.style.bottom = (30- pseudoScrollState *20/90)+'px';
+    // shring logo font
+    logo.style.fontSize = Math.max(shrF, 0.5) +'em';
+    // change logo position
+    logo.style.bottom = (logoBottom * shrF)+'px';
     bilboard.style.position = 'absolute';
     bilboard.style.top = '0px';
   }
-  if (pseudoScrollState>=90) {
+  if (pseudoScrollState>=brPoint) {
     wrapper1.style.position = 'fixed';
-    wrapper1.style.top = "-90px";
+    wrapper1.style.top = -brPoint + 'px';
+    // position of div with box-shadow effect
     shadow.style.position = 'fixed';
-    shadow.style.top = "50px";
-    logo.style.fontSize = '0.45em';
-    logo.style.bottom = '10px';
+    shadow.style.top = x*headerHeight + 'px';
+    logo.style.fontSize = Math.max(x, 0.5) +'em';
+    logo.style.bottom = (logoBottom * x)+'px';
+
     bilboard.style.position = 'fixed';
-    bilboard.style.top = '50px';
+    bilboard.style.top = x*headerHeight + 'px';
   }
 }
 
