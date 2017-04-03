@@ -270,9 +270,9 @@ div.wrapper2 div.bilboard {
   align-items: center;
 }
 div.wrapper2 div.tagline {
+  position: relative;
   max-width: 650px;
   width: 80%;
-  /*width: 600px;*/
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   text-align: center;
 }
@@ -905,6 +905,12 @@ div.disclaimerText h2:hover {
   }
   div.wrapper3 {
     font-size: 0.8em;
+  }
+  div.wrapper5 div.year {
+    font-size: 7em;
+  }
+  div.wrapper6 div.chart.wrapper {
+    width: 50%;
   }
   #disclaimer {
     font-size: 0.8em;

@@ -428,24 +428,30 @@
 	<script src="js/chart.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/effects.js" type="text/javascript" charset="utf-8"></script>
 	<script charset="utf-8">
-
+		// ===========================================
+		// adjust home page height to viewport
+		function homePageAdjust() {
+		  wrapper2.style.height = Math.min(540, window.innerHeight*1.1) + 'px';
+		  bilboard.style.height = wrapper2.offsetHeight;
+			bilboard.children[0].style.top = wrapper2.offsetHeight - 540 + 'px';
+		}
+		// ===========================================
 		// Hide alert
 		function cookieAlert() {
 			var el = document.getElementById('cookieAlert');
 			el.classList.add('hidden');
 		}
-
+		// ===========================================
 		// Save user choice to allow cookies
 		function allowCookies() {
 			var today = Date();
 			var miliseconds = Date.parse(today) + 1000*60*60*24*356;
 			var expirationDate = new Date(miliseconds).toUTCString();
-			console.log(expirationDate);
 			document.cookie = "cookies_allowed=;expires=" + expirationDate;
 			document.cookie = "new_session=";
 			cookieAlert();
 		}
-
+		// ===========================================
 		// Toggle between visible and hidden disclaimer
 		function disclaimer() {
 			var el = document.getElementById('disclaimer');
@@ -457,9 +463,7 @@
 				document.cookie = 'new_session';
 			}
 		}
-
-		// ===============================
-
+		// ===========================================
 		// Show cookies alert on page startup if cookies were
 		// not allowed.
 		if (document.cookie.search('cookies_allowed') == -1) {
@@ -473,15 +477,22 @@
 			disclaimer();
 		}
 
+		window.addEventListener('resize', homePageAdjust);
+		window.addEventListener('load', onLoad);
 		window.addEventListener('scroll', globalHandler);
-		// Transform header if needed
-		headerTransformation();
-		// Animate service icons if needed
-		serviceIconAnimation();
-		// Build chart labels
-		chartLabel();
-		// Animate charts if needed
-		chartDrawingControl();
+
+		function onLoad() {
+			homePageAdjust();
+			// Transform header if needed
+			headerTransformation();
+			// Animate service icons if needed
+			serviceIconAnimation();
+			// Build chart labels
+			chartLabel();
+			// Animate charts if needed
+			chartDrawingControl();
+		}
+
 		// Take time to load and show page
 		setTimeout(function(){
 			document.documentElement.classList.remove('no_fouc');

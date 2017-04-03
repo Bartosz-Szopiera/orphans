@@ -74,7 +74,6 @@ function headerTransformation(){
   var logoBottom;
   if (window.innerWidth < 53*em ){
     logoBottom = 10; //px
-    console.log(logoBottom);
   }
   else {
     logoBottom = 25; //px
@@ -84,15 +83,21 @@ function headerTransformation(){
   var wra2TopDist = wrapper2.getBoundingClientRect().top;
   // Get value from 0 to (1-x)*headerHeight
   var pseudoScrollState = -((wra2TopDist>0 ? wra2TopDist : 0) - headerHeight);
+  // var pseudoScrollState = -wra2TopDist;
   // Shrinkage factor in relation to pseudoScrollState
   var shrF = (headerHeight - pseudoScrollState)/headerHeight
 
   if (pseudoScrollState<brPoint) {
     wrapper1.style.position = 'fixed';
+    // wrapper1.style.position = 'relative';
     wrapper1.style.top = -pseudoScrollState + 'px';
+
+    // wrapper2.style.position = 'relative';
+    // wrapper2.style.top = 0 + 'px';
+
     shadow.style.position = 'relative';
     shadow.style.top = '0px';
-    // shring logo font
+    // shrink logo font
     logo.style.fontSize = Math.max(shrF, 0.5) +'em';
     // change logo position
     logo.style.bottom = (logoBottom * shrF)+'px';
@@ -102,6 +107,10 @@ function headerTransformation(){
   if (pseudoScrollState>=brPoint) {
     wrapper1.style.position = 'fixed';
     wrapper1.style.top = -brPoint + 'px';
+
+    // wrapper2.style.position = 'fixed';
+    // wrapper2.style.top = x*headerHeight + 'px';
+
     // position of div with box-shadow effect
     shadow.style.position = 'fixed';
     shadow.style.top = x*headerHeight + 'px';
