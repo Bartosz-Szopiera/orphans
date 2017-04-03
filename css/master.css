@@ -7,7 +7,7 @@
 @import "images.css";
 @font-face {
   font-family: 'Century725BT-Italic';
-  src: url(../fonts/ufonts.com_century725bt-italic-1-opentype.otf);
+  src: url('../fonts/2B4EC7_0_0.woff');
 }
 /*==PAGE-WIDE PREADJUSTMENTS===============*/
 * {
@@ -44,6 +44,7 @@ body {
 }
 div.wrapper1 div.logo h1 {
   font-size: 6em;
+  letter-spacing: -0.1em;
   font-weight: 300;
   color: rgb(62, 62, 62);
 }
@@ -52,17 +53,21 @@ div.wrapper1 div.logo h1::first-letter {
 }
 div.wrapper1 div.telephone h2 {
   font-size: 2.5em;
+  letter-spacing: 0.1em;
+  color: rgb(62, 62, 62);
 }
-div.wrapper1 div.navigation1 li a {
+div.wrapper1 div.navigation1 li {
   font-family: "Century725BT-Italic",serif;
-  font-size: 1.5em;
-  font-style: italic;
+  font-family: 'Century725BT-Italic',serif;
+  font-size: 1.4em;
+  font-style: normal;
 }
 div.wrapper1 div.navigation2 li a{
-  font-size: 2em;
+  font-size: 1.6em;
+  letter-spacing: 0.1em;
 }
 div.wrapper1 div.navigation2 li + li::before {
-  font-size: 2em;
+  font-size: 1.6em;
 }
 div.wrapper2 div.tagline h1 {
   font-size: 3em;
@@ -222,7 +227,8 @@ div.wrapper1 div.navigation1 {
   right: 0px;
 }
 div.wrapper1 div.navigation1 li + li::before {
-  content:'// ';
+  content:'//';
+  padding: 0px 10px;
 }
 div.wrapper1 div.navigation2 {
   position: absolute;
@@ -237,7 +243,8 @@ div.wrapper1 div.navigation2 a:hover{
 }
 div.wrapper1 div.navigation2 li + li::before {
   content: attr(data-bullet);
-  padding: 15px;
+  padding: 0px 20px;
+  color: rgb(161, 161, 161);
 }
 /*=======================*/
 div.spacer1 {
@@ -843,8 +850,8 @@ div.disclaimerText h2:hover {
 }
 
 /*BREAKING POINTS*/
-/*===CHARTS==================================*/
-/*850px -> 53em*/
+/*---------<850px-----------*/
+/*53em x 16px = 848px*/
 @media (max-width: 53em) {
   div.wrapper1 div.logo {
     bottom: 15px;
