@@ -204,7 +204,6 @@ div.wrapper1 li {
 }
 div.wrapper1 div.header.wrapper {
   position: relative;
-  min-width: 600px;
   width: 85%;
   max-width: 1100px;
   margin: auto;
@@ -271,10 +270,11 @@ div.wrapper2 div.bilboard {
   align-items: center;
 }
 div.wrapper2 div.tagline {
-  width: 600px;
+  max-width: 650px;
+  width: 80%;
+  /*width: 600px;*/
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   text-align: center;
-  /*margin: auto;*/
 }
 div.spacer2{
   height: 540px;
@@ -288,7 +288,6 @@ div.wrapper3 div.wrapper>h3 {
   padding-bottom: 100px;
 }
 div.wrapper3 div.wrapper {
-  min-width: 600px;
   width: 85%;
   max-width: 1000px;
   margin: auto;
@@ -371,26 +370,30 @@ div.wrapper4 {
   background: white;
   padding-top: 60px;
   padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 div.wrapper4 h3 {
   text-align: center;
 }
 div.wrapper4 div.portfolio {
+  flex: 1 1 auto;
   padding: 50px 0px;
   margin: auto;
-  min-width: 600px;
   width: 85%;
   max-width: 1600px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 div.wrapper4 div.case {
-  /*make it display in 2x4 table or 4x2*/
   box-sizing: border-box;
   padding: 7px;
-  width: 25%;
-  max-width: 400px;
+  flex: 1 1 auto;
+  max-width: 300px;
+  min-width: 25%;
 }
 div.wrapper4 a.case_link {
   display: block;
@@ -467,7 +470,6 @@ div.wrapper5 {
 div.wrapper5 div.wrapper {
   margin: auto;
   text-align: center;
-  min-width: 600px;
   width: 85%;
   max-width: 1100px;
 }
@@ -531,7 +533,6 @@ div.wrapper6 {
   background: white;
 }
 div.wrapper6.foreground {
-  min-width: 600px;
   width: 85%;
   max-width: 1100px;
   padding: 80px 0px;
@@ -584,7 +585,6 @@ div.wrapper7 {
 div.wrapper7 div.wrapper {
   padding: 30px 0px;
   margin: auto;
-  min-width: 600px;
   width: 85%;
   max-width: 1100px;
   display: flex;
@@ -606,7 +606,6 @@ div.wrapper8 {
   background: rgba(60, 60, 60, 1);
 }
 div.wrapper8>div.wrapper{
-  min-width: 600px;
   width: 85%;
   max-width: 1100px;
   padding-top: 50px;
@@ -648,7 +647,6 @@ div.wrapper8 div.photo_wrapper a:hover {
 div.wrapper8 div.sitemap {
   max-width: 800px;
   width: 60%;
-  min-width: 550px;
   display:flex;
   flex-grow: 2;
   padding-bottom: 50px;
@@ -691,7 +689,6 @@ div.wrapper8 div.location div {
 }
 div.wrapper8 div.footer {
   border-top: 2px solid rgb(43, 43, 43);
-  min-width: 600px;
   width: 85%;
   max-width: 1100px;
   margin: auto;
@@ -849,16 +846,26 @@ div.disclaimerText h2:hover {
 }
 
 /*BREAKING POINTS*/
-/*---------<800px-----------*/
-/*50em x 16px = 800px*/
-@media (max-width: 50em) {
-
+/*---------<1000px-----------*/
+/*62em x 16px = 992px*/
+@media (max-width: 62em) {
+  div.wrapper4 div.case {
+    min-width: 33.3%;
+    max-width: 33.3%;
+  }
+}
+/*---------<900px-----------*/
+/*56em x 16px = 896px*/
+@media (max-width: 56em) {
+  div.wrapper7 {
+    font-size: 0.6em;
+  }
 }
 /*---------<850px-----------*/
 /*53em x 16px = 848px*/
 @media (max-width: 53em) {
   div.wrapper1 div.logo {
-    bottom: 15px;
+    bottom: 20px;
   }
   div.wrapper1 div.logo h1 {
     font-size: 4em;
@@ -869,7 +876,7 @@ div.disclaimerText h2:hover {
   }
   div.wrapper1 div.navigation2 {
     font-size: 0.80em;
-    bottom: 5px;
+    bottom: 10px;
   }
   div.wrapper1 div.telephone {
     font-size: 0.8em;
@@ -890,18 +897,27 @@ div.disclaimerText h2:hover {
     width: 100%;
   }
 }
-/*---------<900px-----------*/
-/*56em x 16px = 896px*/
-@media (max-width: 56em) {
-  div.wrapper7 {
-    font-size: 0.6em;
+/*---------<800px-----------*/
+/*50em x 16px = 800px*/
+@media (max-width: 50em) {
+  div.wrapper2 {
+    font-size: 0.7em;
+  }
+  div.wrapper3 {
+    font-size: 0.8em;
+  }
+  #disclaimer {
+    font-size: 0.8em;
   }
 }
-/*--<800; Cinema)--------------------*/
-/*800 / 16 = 50*/
+/*---------<600px-----------*/
+/*38em x 16px = 608px*/
+@media (max-width: 38em) {
+  div.wrapper4 div.case {
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
 
-/*--<480x320; 800)-------------------*/
-
-/*--(Smart-Watch; 480x320)---------------*/
 
 /*--Touch-Screen-------------------------*/
