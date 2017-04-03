@@ -54,18 +54,18 @@
 				</div>
 				<div id="navigation1" class="navigation1">
 					<ul>
-						<li><a href="">About</a></li>
-						<li><a href="">Our Team</a></li>
-						<li><a href="">Articles</a></li>
-						<li><a href="">Contact</a></li>
+						<li><a href="">About</a></li><!--
+						--><li><a href="">Our Team</a></li><!--
+						--><li><a href="">Articles</a></li><!--
+						--><li><a href="">Contact</a></li>
 					</ul>
 				</div>
 				<div id="navigation2" class="navigation2">
 					<ul>
-						<li><a  href="#">Design</a></li>
-						<li data-bullet="&#8226;"><a href="#">Print</a></li>
-						<li data-bullet="&#8226;"><a href="#">Web</a></li>
-						<li data-bullet="&#8226;"><a href="#">Portfolio</a></li>
+						<li><a  href="#">Design</a></li><!--
+						--><li data-bullet="&#8226;"><a href="#">Print</a></li><!--
+						--><li data-bullet="&#8226;"><a href="#">Web</a></li><!--
+						--><li data-bullet="&#8226;"><a href="#">Portfolio</a></li>
 					</ul>
 				</div>
 			</div>
@@ -506,23 +506,21 @@
 			// mousewheel, wheelDeta, pageYOffset should not be used
 			// outside IE and some Safarmi version.
         document.body.addEventListener('mousewheel', function () {
-            // remove default behavior
-            event.preventDefault();
+          // remove default behavior
+          event.preventDefault();
 
-            //scroll without smoothing
-            var wheelDelta = event.wheelDelta;
-						var wheelDelta = wheelDelta*1.5;
-            var currentScrollPosition = window.pageYOffset;
+          //scroll without smoothing
+          var wheelDelta = event.wheelDelta;
+					var wheelDelta = wheelDelta*1.5;
+          var currentScrollPosition = window.pageYOffset;
 
-						// Scroll smoothing
-						for (var i=0; i<5; i++) {
-							var delay = 10*i;
-							setTimeout(function(currentScrollPosition, wheelDelta, i){
-								window.scrollTo(0, currentScrollPosition - (i+1)*wheelDelta/5);
-							},delay,currentScrollPosition, wheelDelta, i)
-						}
-
-            // window.scrollTo(0, currentScrollPosition - wheelDelta);
+					// Scroll smoothing
+					for (var i=0; i<5; i++) {
+						var delay = 10*i;
+						setTimeout(function(currentScrollPosition, wheelDelta, i){
+							window.scrollTo(0, currentScrollPosition - (i+1)*wheelDelta/5);
+						},delay,currentScrollPosition, wheelDelta, i)
+					}
         });
 		}
 

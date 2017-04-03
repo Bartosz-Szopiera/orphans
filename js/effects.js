@@ -161,7 +161,8 @@ function serviceIconAnimation() {
 }
 //======YEAR-SLOT-MACHINE======================
 function yearAnimation() {
-  var screen_height = document.documentElement.clientHeight;
+  // var screen_height = document.documentElement.clientHeight;
+  var screen_height = window.innerHeight;
   var start_point = 0.70*screen_height;
   var position = year.getBoundingClientRect().top;
     if (position < start_point && (done != 1)){
@@ -267,9 +268,6 @@ function chartLabel(){
       var label = document.createElement('div');
       label.classList.add('chartLabel_'+i);
       label.classList.add('hidden');
-      // label.style.position = 'absolute';
-      // label.style.display = 'flex';
-      // label.style.justifyContent = 'center';
       chart[i].insertBefore(label, canvasWrapper[i]);
       // Adjust label radius to oavoid overlap
       radius = width * 0.5 + orbitShift[i][j]*labelHeight*2;
@@ -292,8 +290,6 @@ function chartLabel(){
         letter.style.transform = 'rotate(' + letterRot + 'deg)';
         letter.style.transformOrigin = 'center ' + radius + 'px';
         letter.style.top = -radius + 'px';
-        // Center letter (to avoid centering with flexbox
-        // which is bugged when used together with position:absolute)
         letter.style.left = -letterWidth*0.5 + 'px';
       }
       // Whole angle covered by the label
@@ -301,9 +297,6 @@ function chartLabel(){
       divRot = angleMid - 0.5*labelArc;
       label.style.transform = 'rotate(' + divRot + 'deg)';
       labelArc = 0;
-      // Center label to not use flexbox
-      // label.style.top = chart[i].offsetHeight*0.5 + 'px';
-      // label.style.left = chart[i].offsetWidth*0.5 + 'px';
     }
   }
 }
@@ -316,7 +309,7 @@ function chartDrawingControl(){
   var stat;
   var label;
   var showLabel = [];
-  var screen_height = document.documentElement.clientHeight;
+  var screen_height = window.innerHeight;
   var start_point3 = 0.80*screen_height;
   for (var i = 0; i < canvas.length; i++) {
     var position = canvas[i].getBoundingClientRect().top;
