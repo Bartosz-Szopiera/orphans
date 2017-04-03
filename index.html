@@ -7,6 +7,7 @@
 		<style>
 			.no_fouc {visibility:hidden;}
 		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript">
 			// Prevent flash of unstyled content
 			document.documentElement.className = 'no_fouc';
@@ -322,7 +323,7 @@
 		</div>
 		<div class="wrapper7">
 			<div class="wrapper">
-				<h2><a href="#">info@orphans.co.uk</a> / 01568 612460</h2>
+				<h2><a href="#">info@orphans.co.uk</a><wbr>&nbsp;/&nbsp;01568&nbsp;612460</h2>
 				<div class="social_media">
 					<a class="icon-instagram-white" href="#"><img src="" alt=""></a>
 					<a class="icon-pinterest-white" href="#"><img src="" alt=""></a>
@@ -490,39 +491,38 @@
 		if(navigator.userAgent.match(/Trident\/7\./)) {
 			// mousewheel, wheelDeta, pageYOffset should not be used
 			// outside IE and some Safarmi version.
-        document.body.addEventListener('mousewheel', function () {
-            // remove default behavior
-            event.preventDefault();
+      document.body.addEventListener('mousewheel', function () {
+          // remove default behavior
+          event.preventDefault();
 
-            //scroll without smoothing
-            var wheelDelta = event.wheelDelta;
-            var currentScrollPosition = window.pageYOffset;
-            window.scrollTo(0, currentScrollPosition - wheelDelta);
-        });
+          //scroll without smoothing
+          var wheelDelta = event.wheelDelta;
+          var currentScrollPosition = window.pageYOffset;
+          window.scrollTo(0, currentScrollPosition - wheelDelta);
+      });
 		}
 
 		// Edge scrolling
 		if(navigator.userAgent.match(/Edge/)) {
 			// mousewheel, wheelDeta, pageYOffset should not be used
 			// outside IE and some Safarmi version.
-        document.body.addEventListener('mousewheel', function () {
-          // remove default behavior
-          event.preventDefault();
+      document.body.addEventListener('mousewheel', function () {
+        // remove default behavior
+        event.preventDefault();
 
-          //scroll without smoothing
-          var wheelDelta = event.wheelDelta;
-					var wheelDelta = wheelDelta*1.5;
-          var currentScrollPosition = window.pageYOffset;
+        //scroll without smoothing
+        var wheelDelta = event.wheelDelta;
+				var wheelDelta = wheelDelta*1.5;
+        var currentScrollPosition = window.pageYOffset;
 
-					// Scroll smoothing
-					for (var i=0; i<5; i++) {
-						var delay = 10*i;
-						setTimeout(function(currentScrollPosition, wheelDelta, i){
-							window.scrollTo(0, currentScrollPosition - (i+1)*wheelDelta/5);
-						},delay,currentScrollPosition, wheelDelta, i)
-					}
-        });
+				// Scroll smoothing
+				for (var i=0; i<5; i++) {
+					var delay = 10*i;
+					setTimeout(function(currentScrollPosition, wheelDelta, i){
+						window.scrollTo(0, currentScrollPosition - (i+1)*wheelDelta/5);
+					},delay,currentScrollPosition, wheelDelta, i)
+				}
+      });
 		}
-
 	</script>
 </html>

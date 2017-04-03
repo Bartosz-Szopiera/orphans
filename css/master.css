@@ -57,7 +57,6 @@ div.wrapper1 div.telephone h2 {
   color: rgb(62, 62, 62);
 }
 div.wrapper1 div.navigation1 li {
-  font-family: "Century725BT-Italic",serif;
   font-family: 'Century725BT-Italic',serif;
   font-size: 1.4em;
   font-style: normal;
@@ -89,7 +88,7 @@ div.wrapper4 div.portfolio h4 {
 }
 div.wrapper4 div.portfolio p {
   font-size: 1.5em;
-  font-style: italic;
+  font-style: normal;
   font-family: "Century725BT-Italic",serif;
 }
 div.wrapper4 a.link_button {
@@ -115,7 +114,7 @@ div.wrapper5 p {
   font-size: 2em;
   line-height: 1.5em;
   font-weight: 100;
-  font-style: italic;
+  font-style: normal;
 }
 div.wrapper6 {
   text-transform: uppercase;
@@ -296,16 +295,13 @@ div.wrapper3 div.wrapper {
   text-align: center;
 }
 div.wrapper3 div.services {
-  padding-bottom: 60px;
   display: flex;
   justify-content: space-around;
 }
 div.wrapper3 div.service {
-  min-width: 150px;
   width: 33%;
-  max-width: 280px;
-  /*margin: 0px 20px;*/
   padding: 0px 10px;
+  padding-bottom: 60px;
   flex: 1 1 auto;
 }
 div.wrapper3 div.service div {
@@ -313,12 +309,12 @@ div.wrapper3 div.service div {
 }
 div.wrapper3 div.service div.circle {
   margin: auto;
+  min-width: 125px;
   width: 85%;
+  max-width: 225px;
   border-radius: 50%;
   flex: 1 1 auto;
 }
-/*If circles are displayed in a column*/
-/*The delay should be 0*/
 div.wrapper3 div.service.pulse div.circle.print {
   animation: circle_pulse 2s;
   animation-delay: 0s;
@@ -356,6 +352,7 @@ div.wrapper3 div.service h3{
   font-size: 2.5em;
 }
 div.wrapper3 div.service p {
+  padding: 0px 10%;
   font-size: 1.5em;
   line-height: 1.5em;
   color: rgb(168, 164, 164);
@@ -525,7 +522,9 @@ div.wrapper5 div.year.founded div.digit:nth-of-type(4) div.numbers {
   top: -3em;
 }
 div.wrapper5 p {
+  margin: auto;
   margin-bottom: 10px;
+  width: 80%;
 }
 /*=======================*/
 div.wrapper6 {
@@ -850,6 +849,11 @@ div.disclaimerText h2:hover {
 }
 
 /*BREAKING POINTS*/
+/*---------<800px-----------*/
+/*50em x 16px = 800px*/
+@media (max-width: 50em) {
+
+}
 /*---------<850px-----------*/
 /*53em x 16px = 848px*/
 @media (max-width: 53em) {
@@ -877,7 +881,20 @@ div.disclaimerText h2:hover {
   div.spacer1 {
     height: 90px;
   }
-  div.wrapper6 div.chart.wrapper {
+  /*==========================*/
+  div.wrapper3 div.services {
+    flex-direction: column;
+    align-items: center;
+  }
+  div.wrapper3 div.service {
+    width: 100%;
+  }
+}
+/*---------<900px-----------*/
+/*56em x 16px = 896px*/
+@media (max-width: 56em) {
+  div.wrapper7 {
+    font-size: 0.6em;
   }
 }
 /*--<800; Cinema)--------------------*/
