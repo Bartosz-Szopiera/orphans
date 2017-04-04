@@ -79,8 +79,8 @@
 			<div class="bilboard" id="bilboard">
 				<div class="tagline">
 					<h1>Creative designers<wbr>, quality printing<br> and high performance websites<br> to build brands<wbr> and deliver excellence</h1>
-					</div>
 				</div>
+			</div>
 		</div>
 		<div class="wrapper3">
 			<div class="wrapper">
@@ -433,9 +433,9 @@
 		// ===========================================
 		// adjust home page height to viewport
 		function homePageAdjust() {
-		  wrapper2.style.height = Math.min(540, window.innerHeight*1.1) + 'px';
-		  bilboard.style.height = wrapper2.offsetHeight;
-			bilboard.children[0].style.top = wrapper2.offsetHeight - 540 + 'px';
+			var headerHeight = pageHeader.offsetHeight;
+			var taglineHeight = window.innerHeight*1.1 - headerHeight;
+			tagline.style.height = Math.min(540, taglineHeight) + 'px';
 		}
 		// ===========================================
 		// Hide alert
@@ -457,6 +457,8 @@
 		// Toggle between visible and hidden disclaimer
 		function disclaimer() {
 			var el = document.getElementById('disclaimer');
+			var delay = 0.8; //s
+			el.style.transition = 'bottom ' + delay + 's';
 			el.classList.toggle('hidden');
 			// Add cookie after user exits the disclaimer to not
 			// show it again in the current session.
@@ -464,6 +466,9 @@
 				document.cookie.search('cookies_allowed') != -1) {
 				document.cookie = 'new_session';
 			}
+			setTimeout(function () {
+				el.style.transition = 'bottom 0s';
+			},delay*1000)
 		}
 		// ===========================================
 		// Show cookies alert on page startup if cookies were

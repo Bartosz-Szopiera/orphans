@@ -3,6 +3,7 @@ var pageHeader = document.getElementsByClassName('header wrapper')[0];
 var logo = document.getElementsByClassName('logo')[0];
 var wrapper2 = document.getElementsByClassName('wrapper2')[0];
 var bilboard = document.getElementById('bilboard');
+var tagline = bilboard.children[0];
 var shadow = document.getElementById('shadow');
 var tel = document.getElementById('telephone');
 var nav1 = document.getElementById('navigation1');

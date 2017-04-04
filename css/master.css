@@ -160,12 +160,6 @@ body {
 div.wrapper1 {
   background: white;
   }
-/*div.wrapper2 {
-  background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
-  background-position: 50% 0px;
-  background-repeat: no-repeat;
-  background-attachment: local;
-}*/
 div.wrapper2 div.bilboard {
   background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
   background-position: 50% 0px;
@@ -267,14 +261,18 @@ div.wrapper2 div.bilboard {
   height: 540px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 div.wrapper2 div.tagline {
   position: relative;
   max-width: 650px;
   width: 80%;
+  height: 540px;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 div.spacer2{
   height: 540px;
@@ -711,7 +709,7 @@ div.wrapper8 div.footer li + li::before{
   position: fixed;
   width: 100%;
   bottom: 0px;
-  transition: bottom 0.8s;
+  /*transition: bottom 0.8s;*/
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -758,7 +756,7 @@ div.wrapper8 div.footer li + li::before{
   border-bottom-left-radius: 100%;
   box-shadow: 0px 0px 0px 15px rgba(173, 48, 16, 0.9);
 }
-div.disclaimerText {
+#disclaimerText {
   width: 100%;
   text-align: center;
   height: 100vh;
@@ -769,19 +767,19 @@ div.disclaimerText {
   align-items: center;
   justify-content: center;
 }
-div.disclaimerText h1, div.disclaimerText h2{
+#disclaimerText h1, #disclaimerText h2{
   flex-grow: 0;
   width: 85%;
   font-size: 2.5em;
   letter-spacing: 2px;
-  padding-bottom: 60px;
+  padding: 30px 0px;
 }
-div.disclaimerText h1 a {
+#disclaimerText h1 a {
   color: rgb(140, 9, 40);
   text-shadow: 1px 1px 5px rgb(223, 216, 213);
   font-weight: 900;
 }
-div.disclaimerText h2:hover {
+#disclaimerText h2:hover {
   cursor: pointer;
 }
 #disclaimer.hidden #disclaimerLabel:hover {
@@ -913,7 +911,13 @@ div.disclaimerText h2:hover {
     width: 50%;
   }
   #disclaimer {
-    font-size: 0.8em;
+    font-size: 0.85em;
+  }
+  #disclaimerLabel h3{
+    padding: 25px 10px;
+  }
+  #disclaimerText h1, #disclaimerText h2 {
+    padding: 15px 0px;
   }
 }
 /*---------<650px-----------*/
@@ -928,6 +932,17 @@ div.disclaimerText h2:hover {
   div.wrapper1 div.logo {
     left: unset;
     right: 0px;
+  }
+  #disclaimer {
+    font-size: 0.7em;
+  }
+  #disclaimerLabel h3{
+    /*font-size: 1.5em;*/
+    padding: 20px 10px;
+  }
+  #disclaimerText h1, #disclaimerText h2 {
+    /*font-size: 1.5em;*/
+    padding: 10px 0px;
   }
 }
 /*---------<600px-----------*/
