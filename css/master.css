@@ -592,11 +592,18 @@ div.wrapper7 div.wrapper {
 div.wrapper7 div.wrapper a:hover {
   color: rgb(200, 200, 200);
 }
+div.wrapper7 div.social_media {
+  max-width: 200px;
+  width: 50%;
+  min-width: 100px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-around;
+}
 div.wrapper7 div.social_media a {
-  display: inline-block;
-  margin: 10px;
-  width: 35px;
+  display: block;
   height: 35px;
+  width: 35px;
   background-size: cover;
 }
 /*=======================*/
@@ -948,6 +955,19 @@ div.wrapper8 div.footer li + li::before{
   }
   div.wrapper3 div.service h3 {
     margin: 10px 0px;
+  }
+  div.wrapper7 {
+    font-size: 0.5em;
+  }
+  div.wrapper7 div.wrapper {
+    padding: 20px 0px;
+  }
+  div.wrapper7 div.social_media {
+    max-width: 150px;
+  }
+  div.wrapper7 div.social_media a {
+    height: 25px;
+    width: 25px;
   }
   div.wrapper8 div.photo_wrapper {
     min-width: 20%;
