@@ -868,7 +868,7 @@ div.disclaimerText h2:hover {
     bottom: 20px;
   }
   div.wrapper1 div.logo h1 {
-    font-size: 4em;
+    font-size: 5.5em;
   }
   div.wrapper1 div.navigation1 {
     font-size: 0.85em;
@@ -883,10 +883,10 @@ div.disclaimerText h2:hover {
     top: 5px;
   }
   div.wrapper1 div.header.wrapper {
-    height: 90px;
+    height: 110px;
   }
   div.spacer1 {
-    height: 90px;
+    height: 110px;
   }
   /*==========================*/
   div.wrapper3 div.services {
@@ -914,6 +914,20 @@ div.disclaimerText h2:hover {
   }
   #disclaimer {
     font-size: 0.8em;
+  }
+}
+/*---------<650px-----------*/
+/*40em x 16px = 640px*/
+@media (max-width: 40.625em) {
+  /*div.wrapper1 div.header.wrapper {
+    height: 40px;
+  }*/
+  div.wrapper1 div.navigation2 {
+    display:none;
+  }
+  div.wrapper1 div.logo {
+    left: unset;
+    right: 0px;
   }
 }
 /*---------<600px-----------*/

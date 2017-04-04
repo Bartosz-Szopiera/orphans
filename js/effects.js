@@ -72,7 +72,12 @@ function headerTransformation(){
   var brPoint = (1-x)*headerHeight;
   // Default distance of logo to header bottom
   var logoBottom;
-  if (window.innerWidth < 53*em ){
+  // Always minimized header for given viewport width
+  if (window.innerWidth < 40.625*em) {
+    var alwaysHide = true
+  }
+  // Adjust log for given viewport width
+  if (window.innerWidth < 53*em){
     logoBottom = 10; //px
   }
   else {
@@ -81,20 +86,13 @@ function headerTransformation(){
 
   // Check scroll state live
   var wra2TopDist = wrapper2.getBoundingClientRect().top;
-  // Get value from 0 to (1-x)*headerHeight
+  // Get a value from 0 to (1-x)*headerHeight
   var pseudoScrollState = -((wra2TopDist>0 ? wra2TopDist : 0) - headerHeight);
-  // var pseudoScrollState = -wra2TopDist;
   // Shrinkage factor in relation to pseudoScrollState
   var shrF = (headerHeight - pseudoScrollState)/headerHeight
 
-  if (pseudoScrollState<brPoint) {
-    wrapper1.style.position = 'fixed';
-    // wrapper1.style.position = 'relative';
+  if (pseudoScrollState<brPoint && alwaysHide != true ) {
     wrapper1.style.top = -pseudoScrollState + 'px';
-
-    // wrapper2.style.position = 'relative';
-    // wrapper2.style.top = 0 + 'px';
-
     shadow.style.position = 'relative';
     shadow.style.top = '0px';
     // shrink logo font
@@ -104,13 +102,8 @@ function headerTransformation(){
     bilboard.style.position = 'absolute';
     bilboard.style.top = '0px';
   }
-  if (pseudoScrollState>=brPoint) {
-    wrapper1.style.position = 'fixed';
+  else if (pseudoScrollState>=brPoint || alwaysHide) {
     wrapper1.style.top = -brPoint + 'px';
-
-    // wrapper2.style.position = 'fixed';
-    // wrapper2.style.top = x*headerHeight + 'px';
-
     // position of div with box-shadow effect
     shadow.style.position = 'fixed';
     shadow.style.top = x*headerHeight + 'px';
@@ -362,7 +355,6 @@ function chartDrawingControl(){
   }
   if ((sum = sumAr(showLabel)) != 0) {
     var sumLabel = sum;
-    console.log(sum);
     var animTime = 0.7;
     var chartDelay;
     var k = 0;
@@ -377,7 +369,6 @@ function chartDrawingControl(){
         // chart animation time and by which chart it is
         // in the current (just shown) row of charts (i*0.2)
         chartDelay = delay/1000 + animTime + k*0.2;
-        console.log(chartDelay);
         for (var j = 0; j < label.length; j++) {
           // Delay each chart label to make them
           // appear in clockwise order
