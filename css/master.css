@@ -112,7 +112,6 @@ div.wrapper5 div.year {
 div.wrapper5 p {
   font-family: "Century725BT-Italic",serif;
   font-size: 2em;
-  line-height: 1.5em;
   font-weight: 100;
   font-style: normal;
 }
@@ -524,7 +523,8 @@ div.wrapper5 div.year.founded div.digit:nth-of-type(4) div.numbers {
 div.wrapper5 p {
   margin: auto;
   margin-bottom: 10px;
-  width: 80%;
+  max-width: 880px;
+  width: 100%;
 }
 /*=======================*/
 div.wrapper6 {
@@ -611,7 +611,6 @@ div.wrapper8>div.wrapper{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /*justify-content: center;*/
 }
 div.wrapper8 div.gallery {
   width: 100%;
@@ -624,11 +623,14 @@ div.wrapper8 div.gallery {
 div.wrapper8 div.gallery div.photos {
   display: flex;
   flex-wrap: nowrap;
+  overflow: hidden;
 }
 div.wrapper8 div.photo_wrapper{
+  box-sizing: border-box;
   background-color: black;
+  background-clip: content-box;
   flex: 1 1 auto;
-  margin: 1px;
+  border: 1px solid transparent;
   overflow: hidden;
 }
 div.wrapper8 div.photo_wrapper a {
@@ -858,6 +860,9 @@ div.wrapper8 div.footer li + li::before{
   div.wrapper7 {
     font-size: 0.6em;
   }
+  div.wrapper8 div.photo_wrapper {
+    min-width: 14.28%;
+  }
 }
 /*---------<850px-----------*/
 /*53em x 16px = 848px*/
@@ -904,6 +909,12 @@ div.wrapper8 div.footer li + li::before{
   div.wrapper3 {
     font-size: 0.8em;
   }
+  div.wrapper3 div.service div.circle {
+    max-width: 200px;
+  }
+  div.wrapper5 h2 {
+    font-size: 2em;
+  }
   div.wrapper5 div.year {
     font-size: 7em;
   }
@@ -923,9 +934,6 @@ div.wrapper8 div.footer li + li::before{
 /*---------<650px-----------*/
 /*40em x 16px = 640px*/
 @media (max-width: 40.625em) {
-  /*div.wrapper1 div.header.wrapper {
-    height: 40px;
-  }*/
   div.wrapper1 div.navigation2 {
     display:none;
   }
@@ -933,15 +941,22 @@ div.wrapper8 div.footer li + li::before{
     left: unset;
     right: 0px;
   }
+  div.wrapper3 div.service div.circle {
+    max-width: 150px;
+  }
+  div.wrapper3 div.service h3 {
+    margin: 10px 0px;
+  }
+  div.wrapper8 div.photo_wrapper {
+    min-width: 20%;
+  }
   #disclaimer {
     font-size: 0.7em;
   }
   #disclaimerLabel h3{
-    /*font-size: 1.5em;*/
     padding: 20px 10px;
   }
   #disclaimerText h1, #disclaimerText h2 {
-    /*font-size: 1.5em;*/
     padding: 10px 0px;
   }
 }
