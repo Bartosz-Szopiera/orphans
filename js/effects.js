@@ -322,6 +322,8 @@ function chartDrawingControl(){
   var start_point3 = 0.80*screen_height;
   for (var i = 0; i < canvas.length; i++) {
     var position = canvas[i].getBoundingClientRect().top;
+    // True whhen chart is not yet shown (chartDone != 1)
+    // and becomes visible enough in the viewport
     if (position < start_point3 && chartDone[i] != 1) {
       var newCanvas = document.createElement('canvas');
       newCanvas.setAttribute('width', 200);
@@ -335,6 +337,8 @@ function chartDrawingControl(){
       chartDone[i] = 1;
       showLabel[i] = 1;
     }
+    // True when chart is not in appropriate position
+    // in the viewport but is currently visible (chartDone != 0)
     else if (position > start_point3 && chartDone[i] != 0) {
       chartDone[i] = 0;
       canvas[i].style.removeProperty('transition-delay');
@@ -350,24 +354,39 @@ function chartDrawingControl(){
         label[j].classList.add('hidden');
       }
     }
+    // True when chart is not in appropriate position
+    // in the viewport and isn't currently visible
     else {
       showLabel[i] = 0;
     }
   }
   if ((sum = sumAr(showLabel)) != 0) {
     var sumLabel = sum;
+    console.log(sum);
     var animTime = 0.7;
     var chartDelay;
+    var k = 0;
+    // For each chart
     for (var i = 0; i < showLabel.length; i++) {
+      // True if chart just got its animation triggered
       if (showLabel[i] == 1) {
+        k ++;
+        // All labels for this chart
         label = document.getElementsByClassName('chartLabel_'+i);
-        chartDelay = delay/1000 + animTime + i*0.2;
+        // Delay label appearance by its chart delay,
+        // chart animation time and by which chart it is
+        // in the current (just shown) row of charts (i*0.2)
+        chartDelay = delay/1000 + animTime + k*0.2;
+        console.log(chartDelay);
         for (var j = 0; j < label.length; j++) {
+          // Delay each chart label to make them
+          // appear in clockwise order
           transDelay = (chartDelay + 0.6*j) +'s';
           label[j].style.transitionDelay = transDelay;
           label[j].classList.remove('hidden');
         }
       }
+      showLabel[i] = 0;
     }
   }
 }

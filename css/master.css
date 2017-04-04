@@ -923,7 +923,11 @@ div.disclaimerText h2:hover {
     min-width: 50%;
     max-width: 50%;
   }
+  div.wrapper6 div.chart.wrapper {
+    width: 100%;
+  }
+  div.wrapper6 div {
+    transition: opacity 0.2s;
+  }
 }
-
-
 /*--Touch-Screen-------------------------*/
