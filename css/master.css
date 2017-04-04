@@ -611,6 +611,7 @@ div.wrapper8>div.wrapper{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: hidden;
 }
 div.wrapper8 div.gallery {
   width: 100%;
@@ -647,9 +648,10 @@ div.wrapper8 div.photo_wrapper a:hover {
 div.wrapper8 div.sitemap {
   max-width: 800px;
   width: 60%;
+  min-width: 550px;
   display:flex;
-  flex-grow: 2;
   padding-bottom: 50px;
+  flex-grow: 1;
 }
 div.wrapper8 div.sitemap div.wrapper {
   padding: 0px;
@@ -949,6 +951,16 @@ div.wrapper8 div.footer li + li::before{
   }
   div.wrapper8 div.photo_wrapper {
     min-width: 20%;
+  }
+  div.wrapper8 div.sitemap {
+    min-width: unset;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  div.wrapper8 div.sitemap div.wrapper{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10px 10%;
   }
   #disclaimer {
     font-size: 0.7em;
