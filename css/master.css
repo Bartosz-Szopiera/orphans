@@ -192,8 +192,7 @@ div.wrapper0 {
 }
 /*=======================*/
 #mainContent {
-  max-width: 100vw;
-  flex: 1 0 auto;
+  min-width: 100vw;
 }
 /*=======================*/
 div.wrapper1 {
@@ -1042,19 +1041,19 @@ div.wrapper8 div.footer li + li::before{
 /*40em x 16px = 640px*/
 @media (max-width: 40.625em) {
   #sidebar {
-    display: initial;
+    display: inherit;
   }
   div.wrapper1 div.header.wrapper {
     width: 95%;
   }
   div.wrapper1 div.menuButton {
-    display: initial;
+    display: inherit;
   }
   div.wrapper1 div.navigation2 {
     display:none;
   }
   div.wrapper1 div.logo {
-    left: unset;
+    left: auto;
     right: 0px;
   }
   div.wrapper3 div.service div.circle {
