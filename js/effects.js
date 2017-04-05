@@ -92,7 +92,8 @@ function headerTransformation(){
   // Shrinkage factor in relation to pseudoScrollState
   var shrF = (headerHeight - pseudoScrollState)/headerHeight
 
-  if (pseudoScrollState<brPoint && alwaysHide != true ) {
+  // if (pseudoScrollState<brPoint && alwaysHide != true ) {
+  if (pseudoScrollState<brPoint && !alwaysHide ) {
     wrapper1.style.top = -pseudoScrollState + 'px';
     shadow.style.position = 'relative';
     shadow.style.top = '0px';
