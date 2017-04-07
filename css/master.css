@@ -14,6 +14,9 @@
   margin: 0px;
   padding: 0px;
 }
+body {
+  background: white;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -151,38 +154,6 @@ div.wrapper8 div.footer {
   font-size: 1.3em;
   color: rgb(205, 205, 205);
 }
-/*==GRAPHICS: BACKGROUNDS, IMAGES=========*/
-/*--All devices--------------------------*/
-body {
-  background: white;
-}
-div.wrapper1 {
-  background: white;
-  }
-div.wrapper2 div.bilboard {
-  background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
-  background-position: 50% 0px;
-  background-repeat: no-repeat;
-  background-attachment: local;
-  background-size: cover;
-}
-div.service div.circle.print {
-  background-color: rgb(115, 173, 189);
-}
-div.service div.circle.design{
-  background: rgb(249, 181, 46);
-}
-div.service div.circle.develop{
-  background: rgb(215, 214, 212);
-}
-/*--<800x600; Cinema)--------------------*/
-
-/*--<480x320; 800x600)-------------------*/
-
-/*--(Smart-Watch; 480x320)---------------*/
-
-/*--Touch-Screen-------------------------*/
-
 /*==POSITIONING & SIZING=================*/
 /*--All devices--------------------------*/
 div.wrapper0 {
@@ -285,6 +256,13 @@ div.wrapper2 div.bilboard {
   justify-content: center;
   align-items: flex-start;
 }
+div.wrapper2 div.bilboard {
+  background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-size: cover;
+}
 div.wrapper2 div.tagline {
   position: relative;
   max-width: 650px;
@@ -333,6 +311,15 @@ div.wrapper3 div.service div.circle {
   max-width: 225px;
   border-radius: 50%;
   flex: 1 1 auto;
+}
+div.wrapper3 div.circle.print {
+  background-color: rgb(115, 173, 189);
+}
+div.wrapper3 div.circle.design{
+  background: rgb(249, 181, 46);
+}
+div.wrapper3 div.circle.develop{
+  background: rgb(215, 214, 212);
 }
 div.wrapper3 div.service.pulse div.circle.print {
   animation: circle_pulse 2s;
@@ -385,6 +372,7 @@ div.wrapper3 div.service.design.pulse p {
 div.wrapper3 div.service.develop.pulse p {
   transition: opacity 1s linear 1.5s;
 }
+
 /*=======================*/
 div.wrapper4 {
   background: white;
@@ -455,10 +443,10 @@ div.wrapper4 div.tagline {
   overflow: hidden;
   transition: padding-bottom 0.20s;
 }
-div.wrapper4 a.case_link div.tagline *{
+div.wrapper4 a.case_link div.tagline * {
   width: 100%;
 }
-div.wrapper4 a.case_link div.tagline hr{
+div.wrapper4 a.case_link div.tagline hr {
   width: 40%;
   border:none;
   border-top: 1px solid rgba(60, 60, 60, 0.4);
