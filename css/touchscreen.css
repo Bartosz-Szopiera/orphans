@@ -1,0 +1,55 @@
+div.wrapper1 div.menuButton.touch {
+  cursor: pointer;
+}
+div.wrapper1 div.navigation1 a.touch{
+  border-bottom: 1px solid;
+}
+div.wrapper1 div.navigation2 a.touch{
+  border-bottom: 1px solid;
+}
+div.wrapper3 div.service a.touch {
+  box-shadow: 0px 0px 0px 300px rgba(255,255,255, 0.55) inset;
+}
+div.wrapper4 a.case_link.touch div.poster {
+  top: -101%;
+}
+div.wrapper4 a.case_link.touch div.tagline{
+  padding-bottom: 22%;
+  z-index: 0;
+}
+div.wrapper4 a.link_button.touch {
+  background: rgba(143, 143, 143, 0.15);
+}
+div.wrapper7 div.wrapper a.touch {
+  color: rgb(200, 200, 200);
+}
+div.wrapper8 div.photo_wrapper a.touch {
+  opacity: 0.5;
+  transform: scale(1.05,1.05);
+}
+div.wrapper8 div.footer li a.touch{
+  text-decoration: underline;
+}
+#disclaimerText h2.touch {
+  cursor: pointer;
+}
+#disclaimer.hidden #disclaimerLabel.touch {
+  transform: translate(0,-10px);
+}
+#disclaimer.hidden #disclaimerLabel.touch + #disclaimerText {
+  transform: translate(0,-10px);
+}
+#disclaimerLabel h3.touch {
+  cursor: pointer;
+  font-size:2.2em;
+}
+#cookieAlert p.touch {
+  cursor: pointer;
+  text-shadow: 1px 1px 1px rgb(203, 171, 147);
+}
+#sidebar div.closeButton.touch {
+  cursor: pointer;
+}
+#sidebar li a.touch {
+  text-decoration: underline;
+}

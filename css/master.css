@@ -193,7 +193,7 @@ div.wrapper1 div.menuButton {
   margin: 5px;
   background-size: 100%;
 }
-div.wrapper1 div.menuButton:hover {
+div.wrapper1 div.menuButton.hover:hover {
   cursor: pointer;
 }
 div.wrapper1 div.logo {
@@ -220,10 +220,10 @@ div.wrapper1 div.navigation2 {
   bottom: 15px;
   right: 0%;
 }
-div.wrapper1 div.navigation1 a:hover{
+div.wrapper1 div.navigation1 a.hover:hover{
   border-bottom: 1px solid;
 }
-div.wrapper1 div.navigation2 a:hover{
+div.wrapper1 div.navigation2 a.hover:hover{
   border-bottom: 1px solid;
 }
 div.wrapper1 div.navigation2 li + li::before {
@@ -345,7 +345,7 @@ div.wrapper3 div.service div.circle a{
   background-position: center;
   background-size: cover;
 }
-div.wrapper3 div.service a:hover {
+div.wrapper3 div.service a.hover:hover {
   box-shadow: 0px 0px 0px 300px rgba(255,255,255, 0.55) inset;
 }
 @keyframes circle_pulse {
@@ -451,10 +451,10 @@ div.wrapper4 a.case_link div.tagline hr {
   border:none;
   border-top: 1px solid rgba(60, 60, 60, 0.4);
 }
-div.wrapper4 a.case_link:hover div.poster {
+div.wrapper4 a.case_link.hover:hover div.poster {
   top: -101%;
 }
-div.wrapper4 a.case_link:hover div.tagline{
+div.wrapper4 a.case_link.hover:hover div.tagline{
   padding-bottom: 22%;
   z-index: 0;
 }
@@ -467,7 +467,7 @@ div.wrapper4 a.link_button {
   border: 1px solid rgba(56, 56, 56, 0.74);
   transition: all 0.5s;
 }
-div.wrapper4 a.link_button:hover {
+div.wrapper4 a.link_button.hover:hover {
   background: rgba(143, 143, 143, 0.15);
 }
 /*=======================*/
@@ -602,7 +602,7 @@ div.wrapper7 div.wrapper {
   justify-content: space-between;
   align-items: center;
 }
-div.wrapper7 div.wrapper a:hover {
+div.wrapper7 div.wrapper a.hover:hover {
   color: rgb(200, 200, 200);
 }
 div.wrapper7 div.social_media {
@@ -663,7 +663,7 @@ div.wrapper8 div.photo_wrapper a {
   padding-bottom: 100%;
   transition: opacity 0.2s, transform 0.2s;
 }
-div.wrapper8 div.photo_wrapper a:hover {
+div.wrapper8 div.photo_wrapper a.hover:hover {
   opacity: 0.5;
   transform: scale(1.05,1.05);
 }
@@ -722,7 +722,7 @@ div.wrapper8 div.footer {
 div.wrapper8 div.footer li{
   display: inline;
 }
-div.wrapper8 div.footer li a:hover{
+div.wrapper8 div.footer li a.hover:hover{
   text-decoration: underline;
 }
 div.wrapper8 div.footer li + li::before{
@@ -805,16 +805,16 @@ div.wrapper8 div.footer li + li::before{
   text-shadow: 1px 1px 5px rgb(223, 216, 213);
   font-weight: 900;
 }
-#disclaimerText h2:hover {
+#disclaimerText h2.hover:hover {
   cursor: pointer;
 }
-#disclaimer.hidden #disclaimerLabel:hover {
+#disclaimer.hidden #disclaimerLabel.hover:hover {
   transform: translate(0,-10px);
 }
-#disclaimer.hidden #disclaimerLabel:hover + #disclaimerText {
+#disclaimer.hidden #disclaimerLabel.hover:hover + #disclaimerText {
   transform: translate(0,-10px);
 }
-#disclaimerLabel h3:hover {
+#disclaimerLabel h3.hover:hover {
   cursor: pointer;
   font-size:2.2em;
 }
@@ -861,7 +861,7 @@ div.wrapper8 div.footer li + li::before{
   padding-left: 20px;
   color: rgb(230, 230, 230);
 }
-#cookieAlert p:hover {
+#cookieAlert p.hover:hover {
   cursor: pointer;
   text-shadow: 1px 1px 1px rgb(203, 171, 147);
 }
@@ -909,7 +909,7 @@ div.wrapper8 div.footer li + li::before{
   background-size: 100%;
   float: left;
 }
-#sidebar div.closeButton:hover {
+#sidebar div.closeButton.hover:hover {
   cursor: pointer;
 }
 #sidebar nav {
@@ -936,7 +936,7 @@ div.wrapper8 div.footer li + li::before{
 #sidebar ul.offer h3 {
   font-size: 0.9em;
 }
-#sidebar li a:hover {
+#sidebar li a.hover:hover {
   text-decoration: underline;
 }
 /*BREAKING POINTS*/
