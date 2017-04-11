@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/master.css">
+		<link rel="stylesheet" href="/css/touchscreen.css">
 		<title>orphans.co.uk</title>
 		<style>
 			.no_fouc {visibility:hidden;}
@@ -94,7 +95,7 @@
 							<p class="disable hover" onclick="cookieAlert()">Disable</p>
 						</div>
 						<div class="">
-							<p calss="hover"><a href="../cookies.html">Read more</a></p>
+							<p class="hover"><a href="../cookies.html">Read more</a></p>
 						</div>
 					</div>
 				</div>
@@ -610,28 +611,31 @@
 
 		function touchDevice() {
 			var el = document.getElementsByClassName('hover');
-			for (var i = 0; i < el.length; i++) {
-				el[i].classList.remove('hover');
-				// el[i].classList.add('touch');
-				el[i].addEventListener('touchstart', touch(this));
-				el[i].addEventListener('touchcancel', unTouch(this));
-				el[i].addEventListener('touchmove', unTouch(this));
+			var item;
+			var len = el.length;
+			for (var i = 0; i < len; i++) {
+				item = el[0];
+				item.classList.remove('hover');
+				item.addEventListener('touchstart', touch);
+				item.addEventListener('touchcancel', unTouchActive);
+				item.addEventListener('touchmove', unTouchActive);
 			}
 		}
 
 		function touch() {
 			// if (this != window) {
 				this.classList.add('touch');
-				setTimeout (function(){
-					// this.classList.remove('touch');
-					unTouch(this);
-				},0,this)
-				console.log('Can\'t touch this!');
+				setTimeout (function(el){
+					unTouchPassive(el);
+				},2000,this)
 			// }
 		}
 
-		function unTouch(thing) {
-			thing.classList.remove('touch');
+		function unTouchPassive(el) {
+			el.classList.remove('touch');
+		}
+		function unTouchActive() {
+			this.classList.remove('touch');
 		}
 
 	</script>
