@@ -610,6 +610,11 @@
 		window.addEventListener('touchstart', touchDevice);
 
 		function touchDevice() {
+			// disable context menu as it is not useful on
+			// this webpage and only distracts
+			window.oncontextmenu = function () {
+				return false;
+			}
 			var el = document.getElementsByClassName('hover');
 			var item;
 			var len = el.length;
@@ -623,12 +628,10 @@
 		}
 
 		function touch() {
-			// if (this != window) {
 				this.classList.add('touch');
 				setTimeout (function(el){
 					unTouchPassive(el);
 				},1000,this)
-			// }
 		}
 
 		function unTouchPassive(el) {
