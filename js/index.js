@@ -70,7 +70,7 @@
         // remove default behavior
         event.preventDefault();
         //scroll without smoothing
-        var wheelDelta = event.wheelDelta;
+        var wheelDelta = event.wheelDelta*0.7;
         var currentScrollPosition = window.pageYOffset;
         window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
@@ -79,20 +79,24 @@
   if(navigator.userAgent.match(/Edge/)) {
     // mousewheel, wheelDeta, pageYOffset should not be used
     // outside IE and some Safarmi version.
+    var newScrollPosition;
+    var scrollDelta;
     document.body.addEventListener('mousewheel', function () {
       // remove default behavior
       event.preventDefault();
       //scroll without smoothing
-      var wheelDelta = event.wheelDelta;
-      var wheelDelta = wheelDelta*1.5;
+      var wheelDelta = event.wheelDelta * 0.8;
       var currentScrollPosition = window.pageYOffset;
       // Scroll smoothing
-      for (var i=0; i<5; i++) {
-        var delay = 10*i;
+      for (var i=0; i<10; i++) {
+        var delay = 5*i;
         setTimeout(function(currentScrollPosition, wheelDelta, i){
-          window.scrollTo(0, currentScrollPosition - (i+1)*wheelDelta/5);
+          scrollDelta = (i+1)*wheelDelta/8 * 1.4^(2+10/(9*i^2));
+          newScrollPosition = currentScrollPosition - scrollDelta;
+          window.scrollTo(0, newScrollPosition);
         },delay,currentScrollPosition, wheelDelta, i)
       }
+      // window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
   }
   // =======Handle Touch-Screen devices===========
