@@ -118,21 +118,6 @@ function headerTransformation(){
 
 //=======BIG SERVICE ICONS=====================
 function serviceIconAnimation() {
-  // Goals:
-  // 1) no animation or transition when the page
-  // loads with cirles in active view and above
-  // the animation start-point
-  // 2) no flicker of the icon on page load -
-  // and page can be loaded with circle in
-  // active view in 2 states: when it should
-  // display an icon and when it shouldn't.
-  // In some of them the default setting needs
-  // to be changed an transition effect will
-  // cause a flicker.
-  // 3) Effects trigger independently for each
-  // icon, which will support RWB - for column
-  // layout - each icon will animate when the
-  // user will see it, not sooner
 
   var screen_height = document.documentElement.clientHeight;
   var start_point = 1.1*screen_height;
@@ -226,6 +211,7 @@ var labels = [
     '2 catch the train'
   ]
 ];
+// Shift in labels 'orbit' to avoid overlaping
 var orbitShift = [
   [0,0,1],
   [0,1,0],

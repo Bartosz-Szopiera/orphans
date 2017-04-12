@@ -252,15 +252,18 @@ div.shadow {
 div.wrapper2 {
   position: relative;
   z-index: -2;
-  height: 540px;
+  max-height: 540px;
+  height: 100vh;
 }
 div.wrapper2 div.bilboard {
   position: absolute;
   width: 100%;
-  height: 540px;
+  max-height: 540px;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  overflow: hidden;
 }
 div.wrapper2 div.bilboard {
   background: url('https://orphans.co.uk/sites/default/files/styles/banner_home/public/banners/159901a5-4812-40c8-8556-4bacc2ef4ab6.jpeg?itok=vBwbU8ti');
@@ -273,12 +276,12 @@ div.wrapper2 div.tagline {
   position: relative;
   max-width: 650px;
   width: 80%;
-  height: 540px;
+  /*height: 540px;*/
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
 }
 div.spacer2{
   height: 540px;
@@ -436,7 +439,7 @@ div.wrapper4 div.tagline {
   padding-top: 22%;
   padding-bottom: 0%;
   background: white;
-  line-height: 3em;
+  line-height: 2em;
   height: 0px;
   border: 1px solid rgba(60, 60, 60, 0.16);
   border-top: none;
@@ -1012,6 +1015,9 @@ div.wrapper8 div.footer li + li::before{
   div.wrapper3 div.service div.circle {
     max-width: 200px;
   }
+  div.wrapper4 div.portfolio {
+    font-size: 0.75em;
+  }
   div.wrapper5 h2 {
     font-size: 2em;
   }
@@ -1056,6 +1062,17 @@ div.wrapper8 div.footer li + li::before{
   div.wrapper3 div.service h3 {
     margin: 10px 0px;
   }
+  div.wrapper4 div.portfolio h4 {
+    font-size: 2em;
+    position: relative;
+    top: -10px;
+  }
+  div.wrapper4 div.portfolio hr {
+    display: none;
+  }
+  div.wrapper4 div.portfolio p {
+    display: none;
+  }
   div.wrapper7 {
     font-size: 0.5em;
   }
@@ -1085,7 +1102,7 @@ div.wrapper8 div.footer li + li::before{
   #disclaimer {
     font-size: 0.7em;
   }
-  #disclaimerLabel h3{
+  #disclaimerLabel h3 {
     padding: 20px 10px;
   }
   #disclaimerText h1, #disclaimerText h2 {
@@ -1106,4 +1123,6 @@ div.wrapper8 div.footer li + li::before{
     transition: opacity 0.2s;
   }
 }
-/*--Touch-Screen-------------------------*/
+
+/*---------<500px-----------*/
+/*31em x 16px = 496px*/

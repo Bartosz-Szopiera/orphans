@@ -1,16 +1,12 @@
 function ringChart(canvas,ctx,stat,delay){
 // =================INFO=======================
-// Draw a ring chart; WIP.
+// Draw a ring chart.
 // Necessary arguments:
 //  canvas - identifier for <canvas> element
 //  ctx - identifier for rendering context
 //  stat - array with values for chart segments
 //        (normalized to decimal fractions)
 //  delay - delay for the animation
-// Comming features:
-//    test of provided arguments
-//    error handling in case of incorrect input
-//    Integrated label-building function
  //===============Variables=====================
 if (typeof(ctx) == 'undefined') {
   console.log('No \'ctx\' rendering context found.')
@@ -54,7 +50,7 @@ statStyle[2] = 'rgb(51, 79, 142)';
 statStyle[3] = 'rgb(164, 182, 223)';
 
 // Animation parameters
-fps = 60;
+fps = 40;
 animTime = 0.7; //s
 frames = animTime*fps;
 dt = animTime*1000/frames;
